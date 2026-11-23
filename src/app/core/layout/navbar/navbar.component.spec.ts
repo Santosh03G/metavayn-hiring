@@ -3,6 +3,7 @@ import { NavbarComponent } from './navbar.component';
 import { provideRouter, Router, NavigationEnd } from '@angular/router';
 import { Subject } from 'rxjs';
 import { PLATFORM_ID } from '@angular/core';
+import { gsap } from 'gsap';
 
 describe('NavbarComponent', () => {
   let fixture: ComponentFixture<NavbarComponent>;
@@ -38,7 +39,118 @@ describe('NavbarComponent', () => {
   });
 
   afterEach(() => {
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = '';
+    }
     fixture.destroy();
+  });
+
+  it('should toggle mobile menu and update body overflow', () => {
+    component.toggleMobileMenu();
+    fixture.detectChanges();
+    expect(component.isMobileMenuOpen()).toBe(true);
+
+    const mobileOverlay = fixture.nativeElement.querySelector('.mobile-drawer');
+    expect(mobileOverlay).toBeTruthy();
+    expect(document.body.style.overflow).toBe('hidden');
+
+    component.closeMobileMenu();
+    fixture.detectChanges();
+    expect(component.isMobileMenuOpen()).toBe(false);
+    expect(document.body.style.overflow).toBe('');
+  });
+
+  it('should close mobile menu on Escape key press', () => {
+    component.toggleMobileMenu();
+    fixture.detectChanges();
+    expect(component.isMobileMenuOpen()).toBe(true);
+
+    const event = new KeyboardEvent('keydown', { key: 'Escape' });
+    window.dispatchEvent(event);
+    fixture.detectChanges();
+
+    expect(component.isMobileMenuOpen()).toBe(false);
+    expect(document.body.style.overflow).toBe('');
+  });
+
+  it('should close mobile menu when clicking close button or links', () => {
+    component.toggleMobileMenu();
+    fixture.detectChanges();
+
+    const closeBtn = fixture.nativeElement.querySelector('.mobile-drawer button[aria-label="Close menu"]');
+    expect(closeBtn).toBeTruthy();
+    closeBtn.click();
+    fixture.detectChanges();
+    expect(component.isMobileMenuOpen()).toBe(false);
+
+    component.toggleMobileMenu();
+    fixture.detectChanges();
+    const link = fixture.nativeElement.querySelector('.mobile-nav-link');
+    expect(link).toBeTruthy();
+    link.click();
+    fixture.detectChanges();
+    expect(component.isMobileMenuOpen()).toBe(false);
+  });
+
+  it('should close mobile menu when clicking logo in drawer', () => {
+    component.toggleMobileMenu();
+    fixture.detectChanges();
+
+    const logoInDrawer = fixture.nativeElement.querySelector('.mobile-drawer app-logo');
+    expect(logoInDrawer).toBeTruthy();
+    logoInDrawer.click();
+    fixture.detectChanges();
+
+    expect(component.isMobileMenuOpen()).toBe(false);
+  });
+
+  it('should render 8 links and primary CTA button inside mobile drawer', () => {
+    component.toggleMobileMenu();
+    fixture.detectChanges();
+
+    const mobileLinks = fixture.nativeElement.querySelectorAll('.mobile-nav-link');
+    expect(mobileLinks.length).toBe(8);
+
+    const cta = fixture.nativeElement.querySelector('.mobile-drawer app-button[variant="amber-cta"]');
+    expect(cta).toBeTruthy();
+    expect(cta.textContent).toContain('Submit Your Resume');
+  });
+
+  it('should animate mobile links with gsap when opened and reduced motion is false', async () => {
+    const gsapSpy = vi.spyOn(gsap, 'fromTo');
+    component.toggleMobileMenu();
+    fixture.detectChanges();
+
+    await new Promise(resolve => setTimeout(resolve, 25));
+    expect(gsapSpy).toHaveBeenCalledWith(
+      expect.anything(),
+      { opacity: 0, y: 15 },
+      expect.objectContaining({ opacity: 1, y: 0, stagger: 0.05, duration: 0.3, ease: 'power2.out' })
+    );
+    gsapSpy.mockRestore();
+  });
+
+  it('should skip gsap animation when prefers-reduced-motion matches', async () => {
+    const gsapSpy = vi.spyOn(gsap, 'fromTo');
+    const matchMediaSpy = vi.spyOn(window, 'matchMedia').mockReturnValue({
+      matches: true,
+      media: '(prefers-reduced-motion: reduce)',
+      onchange: null,
+      addListener: () => {},
+      removeListener: () => {},
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      dispatchEvent: () => false,
+    });
+
+    component.toggleMobileMenu();
+    fixture.detectChanges();
+
+    await new Promise(resolve => setTimeout(resolve, 25));
+    expect(gsapSpy).not.toHaveBeenCalled();
+
+    matchMediaSpy.mockRestore();
+    gsapSpy.mockRestore();
   });
 
   it('should create NavbarComponent', () => {
