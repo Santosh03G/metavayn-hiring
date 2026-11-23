@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, inject, NgZone, PLATFORM_ID } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
@@ -7,7 +7,6 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class TiltCardDirective {
   private el = inject(ElementRef);
-  private ngZone = inject(NgZone);
   private platformId = inject(PLATFORM_ID);
 
   @Input() maxTilt = 8;

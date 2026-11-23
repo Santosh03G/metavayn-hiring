@@ -62,6 +62,12 @@ describe('SmoothScrollService', () => {
     }).not.toThrow();
   });
 
+  it('should call destroy on ngOnDestroy', () => {
+    const destroySpy = vi.spyOn(service, 'destroy');
+    service.ngOnDestroy();
+    expect(destroySpy).toHaveBeenCalled();
+  });
+
   it('should support multiple calls to init or destroy idempotently', () => {
     expect(() => {
       service.init();

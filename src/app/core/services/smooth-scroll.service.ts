@@ -1,4 +1,4 @@
-import { Injectable, inject, NgZone, PLATFORM_ID } from '@angular/core';
+import { Injectable, inject, NgZone, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 @Injectable({
   providedIn: 'root'
 })
-export class SmoothScrollService {
+export class SmoothScrollService implements OnDestroy {
   private ngZone = inject(NgZone);
   private platformId = inject(PLATFORM_ID);
   private lenis: Lenis | null = null;
@@ -72,5 +72,9 @@ export class SmoothScrollService {
       this.lenis.destroy();
       this.lenis = null;
     }
+  }
+
+  ngOnDestroy(): void {
+    this.destroy();
   }
 }

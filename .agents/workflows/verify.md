@@ -1,0 +1,1 @@
+Run the dev server if not running, open http://localhost:4200 in the browser, go to the page we just built, scroll through the whole page and take screenshots at desktop (1440px) and mobile (390px). Check: animations trigger, no layout overflow, no console errors, colours match the palette. Fix any issues you find and show me the final screenshots.
