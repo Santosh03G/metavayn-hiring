@@ -50,11 +50,13 @@ export class SmoothScrollService implements OnDestroy {
     });
   }
 
-  scrollTo(target: string | HTMLElement, options?: Record<string, unknown>): void {
+  scrollTo(target: string | HTMLElement | number, options?: Record<string, unknown>): void {
     if (this.lenis) {
       this.lenis.scrollTo(target, options);
     } else if (typeof window !== 'undefined') {
-      if (typeof target === 'string') {
+      if (typeof target === 'number') {
+        window.scrollTo({ top: target, behavior: 'smooth' });
+      } else if (typeof target === 'string') {
         const el = document.querySelector(target);
         el?.scrollIntoView?.({ behavior: 'smooth' });
       } else {
