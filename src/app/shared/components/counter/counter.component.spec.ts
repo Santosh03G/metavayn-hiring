@@ -83,6 +83,25 @@ describe('CounterComponent', () => {
       expect(mockTween.kill).toHaveBeenCalled();
       expect(mockTrigger.kill).toHaveBeenCalled();
     });
+
+    it('should synchronously capture ScrollTrigger and kill both tween and scrollTrigger on destroy', () => {
+      const mockTrigger = { kill: vi.fn() } as any;
+      const mockTween = {
+        kill: vi.fn(),
+        scrollTrigger: mockTrigger
+      } as any;
+      gsapToSpy.mockReturnValue(mockTween);
+
+      const localFixture = TestBed.createComponent(CounterComponent);
+      localFixture.componentInstance.targetValue = 100;
+      localFixture.detectChanges();
+
+      expect((localFixture.componentInstance as any).trigger).toBe(mockTrigger);
+
+      localFixture.destroy();
+      expect(mockTween.kill).toHaveBeenCalled();
+      expect(mockTrigger.kill).toHaveBeenCalled();
+    });
   });
 
   describe('prefers-reduced-motion', () => {

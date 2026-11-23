@@ -62,6 +62,7 @@ export class ButtonComponent implements AfterViewInit, OnDestroy {
   private quickToY?: (n: number) => void;
   private mouseMoveHandler?: (e: MouseEvent) => void;
   private mouseLeaveHandler?: () => void;
+  private containerEl: HTMLElement | null = null;
 
   get buttonClasses(): string {
     const base = 'relative inline-flex items-center justify-center font-semibold rounded-xl px-6 py-3 transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed select-none';
@@ -82,13 +83,15 @@ export class ButtonComponent implements AfterViewInit, OnDestroy {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     this.ngZone.runOutsideAngular(() => {
-      const container = this.el.nativeElement.querySelector('button, a');
-      if (!container) return;
+      this.containerEl = this.el.nativeElement.querySelector('button, a');
+      if (!this.containerEl) return;
 
+      const container = this.containerEl;
       this.quickToX = gsap.quickTo(container, 'x', { duration: 0.3, ease: 'power2.out' });
       this.quickToY = gsap.quickTo(container, 'y', { duration: 0.3, ease: 'power2.out' });
 
       this.mouseMoveHandler = (e: MouseEvent) => {
+        if (this.disabled) return;
         const rect = container.getBoundingClientRect();
         const distCenterRelX = (e.clientX - (rect.left + rect.width / 2)) * 0.25;
         const distCenterRelY = (e.clientY - (rect.top + rect.height / 2)) * 0.25;
@@ -107,10 +110,10 @@ export class ButtonComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    const container = this.el.nativeElement.querySelector('button, a');
-    if (container) {
-      if (this.mouseMoveHandler) container.removeEventListener('mousemove', this.mouseMoveHandler);
-      if (this.mouseLeaveHandler) container.removeEventListener('mouseleave', this.mouseLeaveHandler);
+    if (this.containerEl) {
+      if (this.mouseMoveHandler) this.containerEl.removeEventListener('mousemove', this.mouseMoveHandler);
+      if (this.mouseLeaveHandler) this.containerEl.removeEventListener('mouseleave', this.mouseLeaveHandler);
+      this.containerEl = null;
     }
   }
 }

@@ -61,10 +61,13 @@ export class CounterComponent implements AfterViewInit, OnDestroy {
           });
         }
       });
+
+      this.trigger = (this.tween as unknown as { scrollTrigger?: ScrollTrigger })?.scrollTrigger ?? this.trigger;
     });
   }
 
   ngOnDestroy(): void {
+    (this.tween as unknown as { scrollTrigger?: ScrollTrigger })?.scrollTrigger?.kill();
     this.tween?.kill();
     this.trigger?.kill();
   }

@@ -158,6 +158,20 @@ describe('ButtonComponent', () => {
     singleFixture.destroy();
   });
 
+  it('should not update magnetic position on mousemove if disabled is true', () => {
+    const mockQuickTo = Object.assign(vi.fn(), { tween: {} as any });
+    vi.spyOn(gsap, 'quickTo').mockReturnValue(mockQuickTo);
+    const singleFixture = TestBed.createComponent(ButtonComponent);
+    singleFixture.componentRef.setInput('disabled', true);
+    singleFixture.detectChanges();
+
+    const btn = singleFixture.nativeElement.querySelector('button');
+    btn.dispatchEvent(new MouseEvent('mousemove', { clientX: 100, clientY: 100 }));
+
+    expect(mockQuickTo).not.toHaveBeenCalled();
+    singleFixture.destroy();
+  });
+
   it('should direct test ButtonComponent properties and amber-cta variant', () => {
     const singleFixture = TestBed.createComponent(ButtonComponent);
     expect(singleFixture.componentInstance.variant).toBe('primary');
