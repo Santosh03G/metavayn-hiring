@@ -8,6 +8,10 @@ import { gsap } from 'gsap';
   standalone: true,
   imports: [CommonModule, RouterLink],
   template: `
+    <ng-template #contentTpl>
+      <ng-content></ng-content>
+    </ng-template>
+
     @if (href) {
       @if (isExternal) {
         <a
@@ -18,7 +22,7 @@ import { gsap } from 'gsap';
           [attr.aria-label]="ariaLabel"
         >
           <span #content class="inline-flex items-center gap-2 pointer-events-none">
-            <ng-content></ng-content>
+            <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
           </span>
         </a>
       } @else {
@@ -28,7 +32,7 @@ import { gsap } from 'gsap';
           [attr.aria-label]="ariaLabel"
         >
           <span #content class="inline-flex items-center gap-2 pointer-events-none">
-            <ng-content></ng-content>
+            <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
           </span>
         </a>
       }
@@ -40,7 +44,7 @@ import { gsap } from 'gsap';
         [attr.aria-label]="ariaLabel"
       >
         <span #content class="inline-flex items-center gap-2 pointer-events-none">
-          <ng-content></ng-content>
+          <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
         </span>
       </button>
     }
