@@ -1,43 +1,66 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { vi } from 'vitest';
 import { AppComponent } from './app.component';
 import { SmoothScrollService } from './core/services/smooth-scroll.service';
 
 describe('AppComponent', () => {
-  let smoothScrollServiceMock: { init: ReturnType<typeof vi.fn>; destroy: ReturnType<typeof vi.fn> };
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+  let mockScroll: { init: ReturnType<typeof vi.fn>; destroy: ReturnType<typeof vi.fn> };
+
+  beforeAll(() => {
+    if (typeof window !== 'undefined' && !window.matchMedia) {
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        value: (query: string) => ({
+          matches: false,
+          media: query,
+          onchange: null,
+          addListener: () => {},
+          removeListener: () => {},
+          addEventListener: () => {},
+          removeEventListener: () => {},
+          dispatchEvent: () => false,
+        }),
+      });
+    }
+  });
 
   beforeEach(async () => {
-    smoothScrollServiceMock = {
-      init: vi.fn(),
-      destroy: vi.fn()
-    };
+    mockScroll = { init: vi.fn(), destroy: vi.fn() };
 
     await TestBed.configureTestingModule({
       imports: [AppComponent],
       providers: [
         provideRouter([]),
-        { provide: SmoothScrollService, useValue: smoothScrollServiceMock }
+        { provide: SmoothScrollService, useValue: mockScroll }
       ]
     }).compileComponents();
-  });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it('should initialize SmoothScrollService on ngOnInit', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    expect(smoothScrollServiceMock.init).toHaveBeenCalledTimes(1);
   });
 
-  it('should destroy SmoothScrollService on ngOnDestroy', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
+  it('should create the app and render layout shell elements', () => {
+    expect(component).toBeTruthy();
+    const nav = fixture.nativeElement.querySelector('app-navbar');
+    const footer = fixture.nativeElement.querySelector('app-footer');
+    const wipe = fixture.nativeElement.querySelector('app-route-wipe');
+    const intro = fixture.nativeElement.querySelector('app-page-intro');
+    const skipLink = fixture.nativeElement.querySelector('a[href="#main-content"]');
+
+    expect(nav).toBeTruthy();
+    expect(footer).toBeTruthy();
+    expect(wipe).toBeTruthy();
+    expect(intro).toBeTruthy();
+    expect(skipLink).toBeTruthy();
+  });
+
+  it('should initialize and destroy SmoothScrollService on lifecycle', () => {
+    expect(mockScroll.init).toHaveBeenCalled();
     fixture.destroy();
-    expect(smoothScrollServiceMock.destroy).toHaveBeenCalledTimes(1);
+    expect(mockScroll.destroy).toHaveBeenCalled();
   });
 });

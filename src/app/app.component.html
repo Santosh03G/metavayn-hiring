@@ -1,1 +1,16 @@
-<router-outlet></router-outlet>
+<a
+  href="#main-content"
+  class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan focus:text-midnight focus:font-bold focus:rounded-lg focus:shadow-lg focus:outline-none"
+>
+  Skip to main content
+</a>
+
+<app-page-intro></app-page-intro>
+<app-route-wipe></app-route-wipe>
+<app-navbar></app-navbar>
+
+<main id="main-content" class="min-h-screen pt-20">
+  <router-outlet></router-outlet>
+</main>
+
+<app-footer></app-footer>
