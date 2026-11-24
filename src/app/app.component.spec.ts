@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 import { vi } from 'vitest';
 import { AppComponent } from './app.component';
 import { SmoothScrollService } from './core/services/smooth-scroll.service';
+import { gsap } from 'gsap';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -62,5 +63,15 @@ describe('AppComponent', () => {
     expect(mockScroll.init).toHaveBeenCalled();
     fixture.destroy();
     expect(mockScroll.destroy).toHaveBeenCalled();
+  });
+
+  it('should animate page entrance with smooth depth transition', () => {
+    const gsapFromToSpy = vi.spyOn(gsap, 'fromTo');
+    (component as any).animatePageIn();
+    expect(gsapFromToSpy).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({ opacity: 0.35, y: 12, scale: 0.995 }),
+      expect.objectContaining({ opacity: 1, y: 0, scale: 1, duration: 0.28 })
+    );
   });
 });

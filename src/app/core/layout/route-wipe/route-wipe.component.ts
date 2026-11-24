@@ -12,11 +12,14 @@ import { gsap } from 'gsap';
   template: `
     <div
       #panel
-      class="route-wipe-panel fixed inset-0 z-50 pointer-events-none -translate-x-full"
-      style="background: linear-gradient(135deg, #0F1E4A 0%, #1D4ED8 50%, #22D3EE 100%);"
+      class="route-wipe-panel fixed top-0 left-0 w-full h-[3px] z-[9999] pointer-events-none -translate-x-full"
+      style="background: linear-gradient(90deg, rgba(34, 211, 238, 0) 0%, rgba(29, 78, 216, 0.7) 25%, #22D3EE 80%, #FFFFFF 100%); box-shadow: 0 0 16px #22D3EE, 0 0 32px rgba(34, 211, 238, 0.6);"
       aria-hidden="true"
     >
-      <div class="absolute inset-0 bg-midnight/30 backdrop-blur-sm"></div>
+      <!-- Leading Photon Particle Head -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 -mr-1 rounded-full bg-white blur-[1px] shadow-[0_0_12px_#FFFFFF,0_0_24px_#22D3EE]"></div>
+      <!-- Ambient Laser Refraction Veil -->
+      <div class="absolute top-[3px] left-0 w-full h-8 bg-gradient-to-b from-cyan/15 to-transparent pointer-events-none"></div>
     </div>
   `
 })
