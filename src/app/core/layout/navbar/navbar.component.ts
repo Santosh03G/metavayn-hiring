@@ -102,32 +102,47 @@ export interface NavItem {
     <!-- Mobile Drawer Overlay -->
     @if (isMobileMenuOpen()) {
       <div
-        class="mobile-drawer fixed inset-0 z-50 bg-midnight/95 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-8"
+        class="mobile-drawer fixed inset-0 z-50 bg-midnight/98 backdrop-blur-2xl flex flex-col justify-between p-5 sm:p-8"
         role="dialog"
         aria-modal="true"
         aria-label="Mobile Navigation"
       >
-        <div class="flex items-center justify-between pb-6 border-b border-white-10">
+        <!-- Mobile Drawer Header -->
+        <div class="flex items-center justify-between pb-5 border-b border-white/10">
           <app-logo (click)="closeMobileMenu()"></app-logo>
-          <button
-            type="button"
-            (click)="closeMobileMenu()"
-            class="p-2 rounded-lg text-ice hover:text-white hover:bg-white/10"
-            aria-label="Close menu"
-          >
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+          
+          <div class="flex items-center gap-3">
+            <!-- Mobile Telemetry Indicator -->
+            <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan/10 border border-cyan/20 text-[11px] font-mono text-cyan select-none">
+              <span class="relative flex h-1.5 w-1.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-cyan"></span>
+              </span>
+              <span>Active Mandates</span>
+            </div>
+
+            <button
+              type="button"
+              (click)="closeMobileMenu()"
+              class="p-2 rounded-xl text-ice hover:text-white bg-white/5 active:scale-95 transition-all"
+              aria-label="Close menu"
+            >
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <!-- Staggered links -->
-        <div class="flex flex-col gap-3 py-6 overflow-y-auto">
+        <!-- Staggered Links with Touch-Active Physics -->
+        <div class="flex flex-col gap-2 py-5 overflow-y-auto">
           @for (item of mobileNavItems; track item.path) {
             <a
               [routerLink]="item.path"
+              routerLinkActive="bg-white/10 text-cyan border-l-2 border-cyan shadow-[0_0_15px_rgba(34,211,238,0.15)] font-semibold"
+              [routerLinkActiveOptions]="{ exact: item.path === '/' }"
               (click)="closeMobileMenu()"
-              class="mobile-nav-link text-xl sm:text-2xl font-heading font-medium text-ice hover:text-cyan transition-colors py-2 flex items-center justify-between group"
+              class="mobile-nav-link text-lg sm:text-xl font-heading text-ice/90 hover:text-white py-3 px-3.5 rounded-xl flex items-center justify-between group active:scale-[0.98] active:bg-white/10 transition-all cursor-pointer"
             >
               <span>{{ item.label }}</span>
               <span class="text-xs text-slate group-hover:text-cyan transition-colors">→</span>
@@ -135,11 +150,14 @@ export interface NavItem {
           }
         </div>
 
-        <!-- Bottom mobile CTA -->
-        <div class="pt-6 border-t border-white-10 flex flex-col gap-3">
-          <app-button variant="amber-cta" href="/candidates" class="w-full text-center">
+        <!-- Bottom Mobile CTA with Safe Area Handling -->
+        <div class="pt-5 border-t border-white/10 flex flex-col gap-3 pb-[calc(1rem+env(safe-area-inset-bottom,0px))]">
+          <app-button variant="amber-cta" href="/candidates" class="w-full text-center py-1">
             Submit Your Resume
           </app-button>
+          <div class="text-center text-[11px] text-slate font-mono">
+            India Operational Hub • Direct US Placement
+          </div>
         </div>
       </div>
     }

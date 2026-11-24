@@ -66,26 +66,34 @@ export interface TimelineStep {
 
         <!-- Timeline Steps Container -->
         <div class="relative max-w-4xl mx-auto">
-          <!-- Central Animated SVG Progress Rail -->
+          <!-- Central Animated SVG Progress Rail (Desktop) -->
           <div class="hidden md:block absolute left-1/2 top-4 bottom-4 -translate-x-1/2 w-1 bg-white/10 rounded-full overflow-hidden" aria-hidden="true">
             <div #progressRail class="w-full bg-cyan shadow-[0_0_12px_#22D3EE] h-0 transition-all duration-300"></div>
           </div>
 
-          <div class="space-y-10 md:space-y-16">
+          <!-- Mobile Continuous Subway Progress Rail -->
+          <div class="block md:hidden absolute left-5 top-5 bottom-8 w-0.5 bg-gradient-to-b from-cyan via-cyan/40 to-transparent" aria-hidden="true"></div>
+
+          <div class="space-y-8 md:space-y-16">
             @for (step of currentSteps(); track step.number; let i = $index) {
               <div
-                class="timeline-step relative flex flex-col md:flex-row items-center gap-8"
+                class="timeline-step relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 pl-14 md:pl-0"
                 [class.md:flex-row-reverse]="i % 2 === 1"
               >
+                <!-- Mobile Node (Pinned on left progress rail) -->
+                <div class="md:hidden absolute left-0 top-1 w-10 h-10 rounded-full bg-navy border-2 border-cyan text-cyan font-bold flex items-center justify-center text-sm shadow-[0_0_15px_rgba(34,211,238,0.4)] shrink-0 z-10">
+                  {{ step.number }}
+                </div>
+
                 <!-- Step Content Card -->
-                <div class="w-full md:w-1/2 glass p-6 sm:p-8 rounded-2xl border border-white/10 hover:border-cyan/40 transition-all duration-300">
+                <div class="w-full md:w-1/2 glass p-5 sm:p-8 rounded-2xl border border-white/10 hover:border-cyan/40 active:scale-[0.99] transition-all duration-300">
                   <div class="flex items-center gap-3 mb-3">
                     <span class="text-xs font-mono uppercase tracking-widest text-cyan font-bold px-2 py-0.5 rounded bg-cyan/10 border border-cyan/20">
                       Step {{ step.number }}
                     </span>
-                    <h3 class="font-heading font-bold text-xl text-white">{{ step.title }}</h3>
+                    <h3 class="font-heading font-bold text-lg sm:text-xl text-white">{{ step.title }}</h3>
                   </div>
-                  <p class="text-sm text-ice/85 leading-relaxed mb-4">
+                  <p class="text-sm text-ice/85 leading-relaxed mb-4 font-normal">
                     {{ step.description }}
                   </p>
                   
@@ -106,8 +114,8 @@ export interface TimelineStep {
                   </div>
                 </div>
 
-                <!-- Central Milestone Node Dot -->
-                <div class="w-10 h-10 rounded-full bg-navy border-2 border-cyan text-cyan font-bold flex items-center justify-center text-sm shadow-[0_0_15px_rgba(34,211,238,0.4)] shrink-0 z-10">
+                <!-- Central Milestone Node Dot (Desktop) -->
+                <div class="hidden md:flex w-10 h-10 rounded-full bg-navy border-2 border-cyan text-cyan font-bold items-center justify-center text-sm shadow-[0_0_15px_rgba(34,211,238,0.4)] shrink-0 z-10">
                   {{ step.number }}
                 </div>
 
