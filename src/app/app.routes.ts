@@ -18,6 +18,10 @@ export const routes: Routes = [
     loadComponent: () => import('./features/categories/categories.component').then(m => m.CategoriesComponent),
   },
   {
+    path: 'categories/:slug',
+    loadComponent: () => import('./features/categories/category-detail/category-detail.component').then(m => m.CategoryDetailComponent),
+  },
+  {
     path: 'candidates',
     loadComponent: () => import('./features/candidates/candidates.component').then(m => m.CandidatesComponent),
   },
