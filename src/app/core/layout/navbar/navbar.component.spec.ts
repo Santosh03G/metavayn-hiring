@@ -157,9 +157,15 @@ describe('NavbarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render 8 navigation links in desktop menu', () => {
+  it('should render 7 navigation links in desktop menu', () => {
     const desktopLinks = fixture.nativeElement.querySelectorAll('.desktop-nav a');
-    expect(desktopLinks.length).toBe(8);
+    expect(desktopLinks.length).toBe(7);
+  });
+
+  it('should render live status badge indicating active US client mandates', () => {
+    const badge = fixture.nativeElement.querySelector('.radar-badge');
+    expect(badge).toBeTruthy();
+    expect(badge.textContent).toContain('US Mandates Active');
   });
 
   it('should render primary CTA with exact text "Submit Your Resume"', () => {

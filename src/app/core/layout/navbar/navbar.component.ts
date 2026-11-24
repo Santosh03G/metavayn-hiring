@@ -16,66 +16,88 @@ export interface NavItem {
   standalone: true,
   imports: [CommonModule, RouterLink, RouterLinkActive, LogoComponent, ButtonComponent],
   template: `
-    <nav
-      class="fixed top-0 left-0 right-0 z-40 transition-all duration-300"
-      [class.glass]="isScrolled()"
-      [class.py-3]="isScrolled()"
-      [class.py-6]="!isScrolled()"
-      [class.-translate-y-full]="isHidden()"
+    <!-- Top-level floating header container -->
+    <header
+      class="fixed top-0 left-0 right-0 z-40 pointer-events-none transition-all duration-300"
+      [class.pt-3]="!isScrolled()"
+      [class.pt-2]="isScrolled()"
+      [class.-translate-y-28]="isHidden()"
       [class.translate-y-0]="!isHidden()"
-      [class.border-b]="isScrolled()"
-      [class.border-white-10]="isScrolled()"
-      [class.shadow-xl]="isScrolled()"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <!-- Logo -->
-        <app-logo></app-logo>
+      <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <!-- Floating Glass Capsule Navbar -->
+        <nav
+          class="pointer-events-auto rounded-2xl border transition-all duration-300 flex items-center justify-between"
+          [class.glass]="isScrolled()"
+          [class.bg-midnight/70]="!isScrolled()"
+          [class.bg-midnight/90]="isScrolled()"
+          [class.backdrop-blur-2xl]="true"
+          [class.border-white/10]="true"
+          [class.shadow-[0_12px_40px_rgba(0,0,0,0.55)]]="true"
+          [class.border-t-white/20]="true"
+          [class.py-2.5]="isScrolled()"
+          [class.py-3.5]="!isScrolled()"
+          [class.px-4]="true"
+          [class.sm:px-6]="true"
+        >
+          <!-- Left: Logo & Live Status Radar -->
+          <div class="flex items-center gap-3 shrink-0">
+            <app-logo></app-logo>
 
-        <!-- Desktop Navigation Links -->
-        <div class="hidden lg:flex items-center gap-6 xl:gap-8 desktop-nav">
-          @for (item of navItems; track item.path) {
-            <a
-              [routerLink]="item.path"
-              routerLinkActive="text-cyan font-medium active-link"
-              [routerLinkActiveOptions]="{ exact: item.path === '/' }"
-              class="relative text-sm text-ice/80 hover:text-white transition-colors duration-200 group py-1"
+            <!-- Live Status Radar Micro-Pill -->
+            <div class="radar-badge hidden xl:flex items-center gap-2 pl-3 border-l border-white/10 text-[11px] font-mono text-cyan tracking-wide select-none">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan"></span>
+              </span>
+              <span>US Mandates Active</span>
+            </div>
+          </div>
+
+          <!-- Center: Desktop Navigation Links Capsule -->
+          <div class="hidden lg:flex items-center p-1 rounded-xl bg-white/[0.03] border border-white/5 backdrop-blur-md desktop-nav">
+            @for (item of desktopNavItems; track item.path) {
+              <a
+                [routerLink]="item.path"
+                routerLinkActive="text-white bg-white/10 shadow-[0_0_15px_rgba(34,211,238,0.15)] border-white/15 active-link"
+                class="relative px-3.5 py-1.5 rounded-lg text-xs font-medium text-ice/80 hover:text-white hover:bg-white/5 transition-all duration-200 whitespace-nowrap border border-transparent flex items-center gap-1.5 group select-none cursor-pointer"
+              >
+                <span>{{ item.label }}</span>
+                <!-- Active Route Indicator Dot -->
+                <span class="active-dot hidden w-1 h-1 rounded-full bg-cyan shadow-[0_0_6px_#22D3EE]"></span>
+              </a>
+            }
+          </div>
+
+          <!-- Right: Desktop Action Button (Strict Amber Isolation) -->
+          <div class="hidden lg:flex items-center gap-3 shrink-0 desktop-cta">
+            <app-button variant="amber-cta" href="/candidates" class="text-xs whitespace-nowrap">
+              <span>Submit Your Resume</span>
+              <span class="transition-transform duration-200 group-hover:translate-x-0.5 ml-1">→</span>
+            </app-button>
+          </div>
+
+          <!-- Mobile Hamburger Button -->
+          <div class="flex lg:hidden items-center">
+            <button
+              type="button"
+              (click)="toggleMobileMenu()"
+              class="p-2 rounded-xl text-ice hover:text-white hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-cyan transition-colors"
+              [attr.aria-expanded]="isMobileMenuOpen()"
+              aria-label="Toggle navigation menu"
             >
-              {{ item.label }}
-              <!-- Animated underline -->
-              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-cyan scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              <!-- Active Route Indicator Dot -->
-              <span class="active-dot hidden w-1.5 h-1.5 rounded-full bg-cyan absolute -bottom-1.5 left-1/2 -translate-x-1/2 shadow-[0_0_8px_#22D3EE]"></span>
-            </a>
-          }
-        </div>
-
-        <!-- Desktop Action Button (Strict Amber Isolation) -->
-        <div class="hidden lg:flex items-center gap-4 desktop-cta">
-          <app-button variant="amber-cta" href="/candidates">
-            Submit Your Resume
-          </app-button>
-        </div>
-
-        <!-- Mobile Hamburger Button -->
-        <div class="flex lg:hidden items-center">
-          <button
-            type="button"
-            (click)="toggleMobileMenu()"
-            class="p-2 rounded-lg text-ice hover:text-white hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-cyan"
-            [attr.aria-expanded]="isMobileMenuOpen()"
-            aria-label="Toggle navigation menu"
-          >
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              @if (!isMobileMenuOpen()) {
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              } @else {
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              }
-            </svg>
-          </button>
-        </div>
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                @if (!isMobileMenuOpen()) {
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                } @else {
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                }
+              </svg>
+            </button>
+          </div>
+        </nav>
       </div>
-    </nav>
+    </header>
 
     <!-- Mobile Drawer Overlay -->
     @if (isMobileMenuOpen()) {
@@ -100,21 +122,22 @@ export interface NavItem {
         </div>
 
         <!-- Staggered links -->
-        <div class="flex flex-col gap-4 py-8 overflow-y-auto">
-          @for (item of navItems; track item.path) {
+        <div class="flex flex-col gap-3 py-6 overflow-y-auto">
+          @for (item of mobileNavItems; track item.path) {
             <a
               [routerLink]="item.path"
               (click)="closeMobileMenu()"
-              class="mobile-nav-link text-xl sm:text-2xl font-heading font-medium text-ice hover:text-cyan transition-colors py-2"
+              class="mobile-nav-link text-xl sm:text-2xl font-heading font-medium text-ice hover:text-cyan transition-colors py-2 flex items-center justify-between group"
             >
-              {{ item.label }}
+              <span>{{ item.label }}</span>
+              <span class="text-xs text-slate group-hover:text-cyan transition-colors">→</span>
             </a>
           }
         </div>
 
         <!-- Bottom mobile CTA -->
         <div class="pt-6 border-t border-white-10 flex flex-col gap-3">
-          <app-button variant="amber-cta" href="/candidates" class="w-full">
+          <app-button variant="amber-cta" href="/candidates" class="w-full text-center">
             Submit Your Resume
           </app-button>
         </div>
@@ -145,16 +168,29 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private lastScrollY = 0;
   private sub = new Subscription();
 
-  readonly navItems: NavItem[] = [
+  readonly desktopNavItems: NavItem[] = [
+    { label: 'Jobs', path: '/jobs' },
+    { label: 'Disciplines', path: '/categories' },
+    { label: 'Candidates', path: '/candidates' },
+    { label: 'Employers', path: '/employers' },
+    { label: 'Resources', path: '/resources' },
+    { label: 'About', path: '/about' },
+    { label: 'Contact', path: '/contact' }
+  ];
+
+  readonly mobileNavItems: NavItem[] = [
     { label: 'Home', path: '/' },
     { label: 'Search Jobs', path: '/jobs' },
-    { label: 'Job Categories', path: '/categories' },
+    { label: 'Engineering Disciplines', path: '/categories' },
     { label: 'For Candidates', path: '/candidates' },
     { label: 'For Employers', path: '/employers' },
     { label: 'Career Resources', path: '/resources' },
-    { label: 'About Us', path: '/about' },
-    { label: 'Contact', path: '/contact' }
+    { label: 'About Metavayn', path: '/about' },
+    { label: 'Contact Us', path: '/contact' }
   ];
+
+  // Alias for backward compatibility
+  readonly navItems = this.desktopNavItems;
 
   @HostListener('window:keydown.escape')
   onEscape(): void {
