@@ -373,7 +373,7 @@ export class ContactComponent {
       email: 'operations@metavayn.com',
       badge: 'India Centers',
       description: 'Coordinating technical assessment centers, verified workstation infrastructure, and recruiter operations.',
-      locations: 'Bengaluru, Pune, Hyderabad',
+      locations: 'Nationwide Talent Network across India',
       timing: 'Mon-Fri 9 AM - 8 PM IST',
       actionText: 'Email Operations'
     }

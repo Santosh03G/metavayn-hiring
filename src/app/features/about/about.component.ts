@@ -13,9 +13,9 @@ interface OperationalPrinciple {
   pillars: string[];
 }
 
-interface DeliveryHub {
-  city: string;
-  region: string;
+interface DeliveryCluster {
+  title: string;
+  badge: string;
   focus: string;
 }
 
@@ -154,30 +154,30 @@ interface OperatingMetric {
             <div class="lg:col-span-5">
               <span class="text-xs font-mono uppercase tracking-widest text-cyan mb-2 block">Delivery Infrastructure</span>
               <h2 class="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">
-                Operations & Delivery Presence
+                Nationwide Delivery Network
               </h2>
-              <p class="text-base text-ice/80 leading-relaxed mb-6">
-                Our recruiting and technical assessment operations are anchored across India's premier engineering epicenters, tapping into elite talent pools from Tier-1 universities and leading multidisciplinary consulting practices.
+              <p class="text-base text-ice/85 leading-relaxed mb-6 font-normal">
+                Our recruiting and technical assessment operations span India's nationwide engineering ecosystem, tapping into accredited talent pools from premier technological institutions and specialized multidisciplinary consulting practices.
               </p>
 
               <div class="space-y-4 mb-8">
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-navy/40 border border-white/5">
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-navy/40 border border-white/10">
                   <div class="w-8 h-8 rounded-lg bg-cyan/10 border border-cyan/20 flex items-center justify-center text-cyan shrink-0 font-mono text-sm font-bold">
                     4h+
                   </div>
                   <div>
                     <h4 class="text-sm font-bold text-white">US Synchronous Timezone Overlap</h4>
-                    <p class="text-xs text-ice/70">Engineers maintain minimum 4-hour daily overlap with US EST, CST, or PST working windows for seamless sprint planning, code review, and coordination.</p>
+                    <p class="text-xs text-ice/75">Engineers maintain minimum 4-hour daily overlap with US EST, CST, or PST working windows for seamless sprint planning, code review, and coordination.</p>
                   </div>
                 </div>
 
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-navy/40 border border-white/5">
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-navy/40 border border-white/10">
                   <div class="w-8 h-8 rounded-lg bg-cyan/10 border border-cyan/20 flex items-center justify-center text-cyan shrink-0 font-mono text-sm font-bold">
                     IP
                   </div>
                   <div>
                     <h4 class="text-sm font-bold text-white">Security & IP Safeguards</h4>
-                    <p class="text-xs text-ice/70">Enterprise-grade confidentiality, comprehensive bilateral non-disclosure agreements, and SOC2-aligned secure cloud environments.</p>
+                    <p class="text-xs text-ice/75">Enterprise-grade confidentiality, comprehensive bilateral non-disclosure agreements, and SOC2-aligned secure cloud environments.</p>
                   </div>
                 </div>
               </div>
@@ -185,19 +185,19 @@ interface OperatingMetric {
 
             <div class="lg:col-span-7">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                @for (hub of deliveryHubs; track hub.city) {
+                @for (cluster of deliveryClusters; track cluster.title) {
                   <div
                     appTilt
-                    class="bg-navy/30 border border-white/10 rounded-xl p-5 hover:border-cyan/30 transition-all duration-300"
+                    class="bg-navy/40 border border-white/15 rounded-xl p-5 hover:border-cyan/40 hover:bg-navy/60 transition-all duration-300 shadow-md group"
                   >
-                    <div class="flex items-center justify-between mb-2">
-                      <span class="text-base font-bold text-white">{{ hub.city }}</span>
-                      <span class="text-[10px] font-mono uppercase tracking-wider text-cyan px-2 py-0.5 rounded bg-cyan/10 border border-cyan/20">
-                        {{ hub.region }}
+                    <div class="flex items-center justify-between mb-2 gap-2">
+                      <span class="text-sm sm:text-base font-bold text-white group-hover:text-cyan transition-colors">{{ cluster.title }}</span>
+                      <span class="text-[10px] font-mono uppercase tracking-wider text-cyan px-2 py-0.5 rounded bg-cyan/10 border border-cyan/25 shrink-0 whitespace-nowrap">
+                        {{ cluster.badge }}
                       </span>
                     </div>
-                    <p class="text-xs text-ice/70 leading-relaxed">
-                      {{ hub.focus }}
+                    <p class="text-xs text-ice/80 leading-relaxed font-normal">
+                      {{ cluster.focus }}
                     </p>
                   </div>
                 }
@@ -354,31 +354,31 @@ export class AboutComponent {
     }
   ];
 
-  readonly deliveryHubs: DeliveryHub[] = [
+  readonly deliveryClusters: DeliveryCluster[] = [
     {
-      city: 'Bengaluru',
-      region: 'Karnataka',
-      focus: 'High-performance computing, advanced CFD/FEA simulation, MEP computational design, and BIM automation.'
+      title: 'Computational Simulation & Analysis',
+      badge: 'CFD / FEA / HPC',
+      focus: 'High-performance computing, advanced CFD/FEA simulation, thermal modeling, and multiphysics analysis.'
     },
     {
-      city: 'Pune',
-      region: 'Maharashtra',
-      focus: 'Automotive engineering, heavy machinery design, industrial HVAC, and ASME pressure vessel modeling.'
+      title: 'Mechanical & Industrial Systems',
+      badge: 'ASME / ISO COMPLIANT',
+      focus: 'Heavy equipment design, industrial HVAC machinery, ASME pressure vessel modeling, and GD&T precision detailing.'
     },
     {
-      city: 'Hyderabad',
-      region: 'Telangana',
-      focus: 'Structural BIM infrastructure, Revit family creation, civil drafting, and parametric modeling pipelines.'
+      title: 'BIM & Structural Infrastructure',
+      badge: 'US AEC STANDARDS',
+      focus: 'Structural BIM modeling, Revit parametric families, civil drafting, and automated clash-detection pipelines.'
     },
     {
-      city: 'Chennai',
-      region: 'Tamil Nadu',
-      focus: 'Industrial manufacturing systems, sheet metal fabrication, GD&T verification, and structural detailing.'
+      title: 'Electrical & Power Distribution',
+      badge: 'NEC / IEEE CODES',
+      focus: 'Industrial power distribution design, substation engineering, ETAP modeling, and renewable energy integration.'
     },
     {
-      city: 'Delhi NCR',
-      region: 'National Capital Region',
-      focus: 'Commercial AEC delivery, electrical power distribution design, and architectural engineering support.'
+      title: 'Mission-Critical & Thermal AEC',
+      badge: 'ASHRAE / TIER III+',
+      focus: 'Data center cooling infrastructure, cleanroom ventilation systems, and commercial energy load modeling.'
     }
   ];
 

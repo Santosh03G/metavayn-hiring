@@ -207,7 +207,7 @@ interface FaqItem {
                         type="text"
                         [value]="location()"
                         (input)="location.set($any($event.target).value)"
-                        placeholder="e.g. Bengaluru, Pune, Hyderabad, Chennai"
+                        placeholder="e.g. Current city or state in India"
                         class="w-full bg-navy/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-slate focus:outline-none focus:border-cyan transition-colors"
                       />
                     </div>

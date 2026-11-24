@@ -63,4 +63,13 @@ describe('AboutComponent', () => {
     expect(primaryBtns.length).toBeGreaterThanOrEqual(1);
     expect(primaryBtns[0].textContent).toContain('Hire Engineering Talent');
   });
+
+  it('should render nationwide delivery capability clusters without hardcoded city names', () => {
+    const text = fixture.nativeElement.textContent;
+    expect(text).toContain('Nationwide Delivery Network');
+    expect(text).toContain('Computational Simulation & Analysis');
+    expect(text).toContain('Mechanical & Industrial Systems');
+    expect(text).not.toContain('Bengaluru');
+    expect(text).not.toContain('Pune');
+  });
 });
