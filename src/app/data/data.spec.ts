@@ -28,7 +28,7 @@ describe('Data Sets', () => {
     });
   });
 
-  it('should have illustrative job listings covering all 5 disciplines', () => {
+  it('should have illustrative job listings covering all 5 disciplines with detailed specifications', () => {
     expect(FEATURED_JOBS.length).toBeGreaterThanOrEqual(5);
     const disciplineSlugs = new Set(FEATURED_JOBS.map(j => j.disciplineSlug));
     expect(disciplineSlugs.size).toBe(5);
@@ -43,6 +43,10 @@ describe('Data Sets', () => {
       expect(job.compensation).toBeTruthy();
       expect(job.isIllustrative).toBe(true);
       expect(job.tags.length).toBeGreaterThan(0);
+      expect(job.responsibilities.length).toBeGreaterThanOrEqual(3);
+      expect(job.qualifications.length).toBeGreaterThanOrEqual(3);
+      expect(job.preferredTools.length).toBeGreaterThanOrEqual(2);
+      expect(job.relevantCodes.length).toBeGreaterThanOrEqual(2);
     });
   });
 });
