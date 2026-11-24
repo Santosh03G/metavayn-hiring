@@ -53,9 +53,9 @@ describe('JobsComponent', () => {
     expect(cards.length).toBe(5);
   });
 
-  it('should display illustrative listing badge and disclaimer on job board', () => {
-    const badges = fixture.nativeElement.querySelectorAll('.illustrative-badge');
-    expect(badges.length).toBe(5);
+  it('should display disclaimer on job board and render clean job cards without illustrative badge', () => {
+    const badges = fixture.nativeElement.querySelectorAll('.job-card .illustrative-badge');
+    expect(badges.length).toBe(0);
 
     const disclaimer = fixture.nativeElement.querySelector('.illustrative-disclaimer');
     expect(disclaimer).toBeTruthy();

@@ -44,11 +44,8 @@ describe('FeaturedRolesComponent', () => {
     expect(cards.length).toBe(3);
   });
 
-  it('should display "Illustrative listing" badge on every role card', () => {
+  it('should render role cards cleanly without illustrative badge', () => {
     const badges = fixture.nativeElement.querySelectorAll('.illustrative-badge');
-    expect(badges.length).toBe(3);
-    badges.forEach((b: HTMLElement) => {
-      expect(b.textContent).toContain('Illustrative listing');
-    });
+    expect(badges.length).toBe(0);
   });
 });

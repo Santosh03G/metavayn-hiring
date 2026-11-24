@@ -206,9 +206,6 @@ import { FEATURED_JOBS } from '../../../data/jobs.data';
                     <div>
                       <div class="flex items-center justify-between gap-2 mb-2">
                         <span class="text-xs text-cyan uppercase font-semibold">{{ related.discipline }}</span>
-                        <span class="illustrative-badge text-[10px] font-mono px-2 py-0.5 rounded bg-electric/20 text-cyan">
-                          Illustrative listing
-                        </span>
                       </div>
                       <h3 class="font-heading font-bold text-lg text-white mb-2">{{ related.title }}</h3>
                       <p class="text-xs text-slate mb-4">{{ related.compensation }} • {{ related.location }}</p>

@@ -36,13 +36,10 @@ import { FEATURED_JOBS } from '../../../../data/jobs.data';
               class="role-card glass rounded-2xl p-7 border border-white/10 hover:border-cyan/40 transition-all duration-300 flex flex-col justify-between group hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]"
             >
               <div>
-                <!-- Header with Illustrative Badge -->
+                <!-- Header -->
                 <div class="flex items-center justify-between gap-2 mb-4">
                   <span class="text-xs font-semibold text-cyan uppercase tracking-wider font-sans">
                     {{ job.discipline }}
-                  </span>
-                  <span class="illustrative-badge text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-electric/20 text-cyan border border-cyan/30">
-                    Illustrative listing
                   </span>
                 </div>
 

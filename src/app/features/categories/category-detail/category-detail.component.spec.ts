@@ -53,15 +53,12 @@ describe('CategoryDetailComponent', () => {
     expect(focusPills.length).toBeGreaterThanOrEqual(4);
   });
 
-  it('should render illustrative sample roles with mandatory badge and disclaimer', () => {
+  it('should render sample roles with disclaimer and clean cards without illustrative badge', () => {
     componentRef.setInput('slug', 'hvac-thermal');
     fixture.detectChanges();
 
     const badges = fixture.nativeElement.querySelectorAll('.illustrative-badge');
-    expect(badges.length).toBeGreaterThan(0);
-    badges.forEach((badge: HTMLElement) => {
-      expect(badge.textContent).toContain('Illustrative listing');
-    });
+    expect(badges.length).toBe(0);
 
     const disclaimer = fixture.nativeElement.querySelector('.illustrative-disclaimer');
     expect(disclaimer).toBeTruthy();

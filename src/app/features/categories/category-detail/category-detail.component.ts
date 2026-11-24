@@ -116,9 +116,6 @@ import { FEATURED_JOBS } from '../../../data/jobs.data';
                   <div>
                     <div class="flex items-center justify-between gap-2 mb-4">
                       <span class="text-xs font-semibold text-cyan uppercase tracking-wider font-sans">{{ job.discipline }}</span>
-                      <span class="illustrative-badge text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-electric/20 text-cyan border border-cyan/30">
-                        Illustrative listing
-                      </span>
                     </div>
 
                     <h3 class="font-heading font-bold text-xl text-white mb-3 group-hover:text-cyan transition-colors">
