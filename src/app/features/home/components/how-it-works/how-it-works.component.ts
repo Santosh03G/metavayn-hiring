@@ -85,17 +85,25 @@ export interface TimelineStep {
                     </span>
                     <h3 class="font-heading font-bold text-xl text-white">{{ step.title }}</h3>
                   </div>
-                  <p class="text-sm text-ice/80 leading-relaxed mb-4">
+                  <p class="text-sm text-ice/85 leading-relaxed mb-4">
                     {{ step.description }}
                   </p>
-                  <ul class="space-y-1 text-xs text-slate">
-                    @for (detail of step.details; track $index) {
-                      <li class="flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan"></span>
-                        <span>{{ detail }}</span>
-                      </li>
-                    }
-                  </ul>
+                  
+                  <!-- Deliverables Checklist -->
+                  <div class="mt-5 pt-4 border-t border-white/10">
+                    <ul class="space-y-2.5">
+                      @for (detail of step.details; track $index) {
+                        <li class="flex items-center gap-2.5 text-xs sm:text-sm font-medium group/item">
+                          <span class="step-check-badge flex items-center justify-center w-5 h-5 rounded-md bg-cyan/15 border border-cyan/35 text-cyan shrink-0 transition-colors group-hover/item:bg-cyan group-hover/item:text-midnight">
+                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                          <span class="step-detail-point text-ice group-hover/item:text-white transition-colors">{{ detail }}</span>
+                        </li>
+                      }
+                    </ul>
+                  </div>
                 </div>
 
                 <!-- Central Milestone Node Dot -->

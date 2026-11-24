@@ -51,4 +51,15 @@ describe('HowItWorksComponent', () => {
     expect(component.activeTrack()).toBe('employers');
     expect(fixture.nativeElement.textContent).toContain('Role Intake');
   });
+
+  it('should render structured deliverable points with micro-check badges for each step', () => {
+    const checkBadges = fixture.nativeElement.querySelectorAll('.step-check-badge');
+    expect(checkBadges.length).toBeGreaterThan(0);
+
+    const stepPoints = fixture.nativeElement.querySelectorAll('.step-detail-point');
+    expect(stepPoints.length).toBeGreaterThan(0);
+    stepPoints.forEach((point: HTMLElement) => {
+      expect(point.classList.contains('text-ice')).toBe(true);
+    });
+  });
 });
