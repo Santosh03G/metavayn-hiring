@@ -52,7 +52,7 @@ interface FaqItem {
 
           <!-- Honest Disclosure Banner -->
           <div class="inline-block max-w-2xl mx-auto mb-4">
-            <div class="text-xs text-slate font-mono bg-navy/60 border border-white/10 rounded-2xl px-5 py-3 text-left sm:text-center leading-relaxed">
+            <div class="text-xs text-ice/90 font-mono bg-navy/75 border border-white/15 rounded-2xl px-5 py-3.5 text-left sm:text-center leading-relaxed backdrop-blur-md shadow-lg shadow-black/25">
               <span class="text-cyan font-bold mr-1.5">Disclosure:</span>
               Metavayn is an India-based engineering recruitment firm connecting top engineering talent in India with US engineering clients. Placements are structured as remote contractor or direct-hire services without US visa sponsorship.
             </div>

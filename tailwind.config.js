@@ -14,7 +14,7 @@ module.exports = {
         ice: '#EAF2FF',
         white: '#FFFFFF',
         ink: '#0F172A',
-        slate: '#475569',
+        slate: '#94A3B8',
         amber: '#F59E0B',
       },
       fontFamily: {

@@ -38,10 +38,10 @@ interface OperatingMetric {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <!-- Breadcrumb Navigation -->
           <nav aria-label="Breadcrumb" class="mb-6">
-            <ol class="inline-flex items-center gap-2 text-xs font-mono text-slate">
+            <ol class="inline-flex items-center gap-2 text-xs font-mono text-ice/75">
               <li><a routerLink="/" class="hover:text-cyan transition-colors">Home</a></li>
-              <li class="text-white/20">/</li>
-              <li class="text-cyan">About</li>
+              <li class="text-white/30">/</li>
+              <li class="text-cyan font-semibold">About</li>
             </ol>
           </nav>
 
@@ -54,13 +54,13 @@ interface OperatingMetric {
             Bridging Indian Engineering Excellence with US Infrastructure
           </h1>
 
-          <p class="text-base sm:text-lg text-ice/80 max-w-3xl mx-auto leading-relaxed mb-6">
+          <p class="text-base sm:text-lg text-ice/85 max-w-3xl mx-auto leading-relaxed mb-6 font-normal">
             Metavayn was founded with a singular conviction: global engineering capacity should not be constrained by geographic boundaries. We empower US architectural, engineering, and manufacturing organizations to scale high-complexity technical workflows by deploying rigorously vetted, code-proficient Indian engineers.
           </p>
 
           <!-- Honest Disclosure Banner -->
           <div class="inline-block max-w-2xl mx-auto mb-8">
-            <div class="text-xs text-slate font-mono bg-navy/60 border border-white/10 rounded-2xl px-5 py-3 text-left sm:text-center leading-relaxed">
+            <div class="text-xs text-ice/90 font-mono bg-navy/75 border border-white/15 rounded-2xl px-5 py-3.5 text-left sm:text-center leading-relaxed backdrop-blur-md shadow-lg shadow-black/25">
               <span class="text-cyan font-bold mr-1.5">Disclosure:</span>
               Operations based in India. Metavayn operates transparently as an India-based specialized engineering recruitment firm connecting top engineering talent in India with US engineering clients. Placements are structured as remote contractor or direct-hire services without US physical offices or visa sponsorship.
             </div>

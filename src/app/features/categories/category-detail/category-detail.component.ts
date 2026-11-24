@@ -15,7 +15,7 @@ import { FEATURED_JOBS } from '../../../data/jobs.data';
       @if (discipline(); as d) {
         <!-- Breadcrumbs -->
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4" aria-label="Breadcrumb">
-          <ol class="flex items-center gap-2 text-xs font-mono text-slate">
+          <ol class="flex items-center gap-2 text-xs font-mono text-ice/75">
             <li>
               <a routerLink="/" class="hover:text-cyan transition-colors">Home</a>
             </li>

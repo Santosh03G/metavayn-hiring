@@ -22,7 +22,7 @@ import { FEATURED_JOBS } from '../../../../data/jobs.data';
 
         <!-- Mandatory Disclaimer Notice -->
         <div class="max-w-3xl mx-auto mt-4 mb-14 text-center">
-          <p class="text-xs text-slate font-mono bg-navy/60 border border-white/10 rounded-full px-4 py-1.5 inline-block">
+          <p class="text-xs text-ice/85 font-mono bg-navy/75 border border-white/15 rounded-full px-5 py-2 inline-block backdrop-blur-md shadow-md shadow-black/20">
             Note: All listings shown below are illustrative representations of client requirements. Metavayn does not publish live vacancies without active mandate agreements.
           </p>
         </div>

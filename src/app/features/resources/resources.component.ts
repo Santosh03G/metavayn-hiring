@@ -20,10 +20,10 @@ import { RESOURCES, RESOURCE_CATEGORIES, ResourceArticle, ResourceCategory } fro
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <!-- Breadcrumb Navigation -->
           <nav aria-label="Breadcrumb" class="mb-6">
-            <ol class="inline-flex items-center gap-2 text-xs font-mono text-slate">
+            <ol class="inline-flex items-center gap-2 text-xs font-mono text-ice/75">
               <li><a routerLink="/" class="hover:text-cyan transition-colors">Home</a></li>
-              <li class="text-white/20">/</li>
-              <li class="text-cyan">Resources</li>
+              <li class="text-white/30">/</li>
+              <li class="text-cyan font-semibold">Resources</li>
             </ol>
           </nav>
 

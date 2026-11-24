@@ -67,7 +67,7 @@ interface FaqItem {
 
           <!-- Honest Disclosure Notice Banner -->
           <div class="inline-block max-w-2xl mx-auto mb-8">
-            <div class="text-xs text-slate font-mono bg-navy/60 border border-white/10 rounded-2xl px-5 py-3 text-left sm:text-center leading-relaxed">
+            <div class="text-xs text-ice/90 font-mono bg-navy/75 border border-white/15 rounded-2xl px-5 py-3.5 text-left sm:text-center leading-relaxed backdrop-blur-md shadow-lg shadow-black/25">
               <span class="text-cyan font-bold mr-1.5">Disclosure:</span>
               Operations based in India. Metavayn operates as an Indian engineering recruitment firm connecting US hiring teams with remote technical talent. We do not maintain US physical offices or offer direct US employment.
             </div>

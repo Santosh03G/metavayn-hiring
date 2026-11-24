@@ -29,15 +29,18 @@ interface CommunicationChannel {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <!-- Breadcrumb Navigation -->
           <nav aria-label="Breadcrumb" class="mb-6">
-            <ol class="inline-flex items-center gap-2 text-xs font-mono text-slate">
+            <ol class="inline-flex items-center gap-2 text-xs font-mono text-ice/75">
               <li><a routerLink="/" class="hover:text-cyan transition-colors">Home</a></li>
-              <li class="text-white/20">/</li>
-              <li class="text-cyan">Contact</li>
+              <li class="text-white/30">/</li>
+              <li class="text-cyan font-semibold">Contact</li>
             </ol>
           </nav>
 
-          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan/10 border border-cyan/20 text-cyan text-xs font-mono uppercase tracking-widest mb-6">
-            <span class="w-1.5 h-1.5 rounded-full bg-cyan"></span>
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan/10 border border-cyan/25 text-cyan text-xs font-mono uppercase tracking-widest mb-6">
+            <span class="relative flex h-1.5 w-1.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-cyan"></span>
+            </span>
             Recruitment & Operations Communications
           </span>
 
@@ -45,13 +48,13 @@ interface CommunicationChannel {
             Connect with the Metavayn Recruitment Team
           </h1>
 
-          <p class="text-base sm:text-lg text-ice/80 max-w-3xl mx-auto leading-relaxed mb-6">
+          <p class="text-base sm:text-lg text-ice/85 max-w-3xl mx-auto leading-relaxed mb-6 font-normal">
             Direct recruiting coordination and technical capability matching across US and Indian engineering hubs. We operate dedicated communication lines for US hiring leaders, prospective engineering contractors, and operational partners.
           </p>
 
           <!-- Honest Operations Disclosure Banner -->
           <div class="inline-block max-w-2xl mx-auto mb-8">
-            <div class="text-xs text-slate font-mono bg-navy/60 border border-white/10 rounded-2xl px-5 py-3 text-left sm:text-center leading-relaxed">
+            <div class="text-xs text-ice/90 font-mono bg-navy/75 border border-white/15 rounded-2xl px-5 py-3.5 text-left sm:text-center leading-relaxed backdrop-blur-md shadow-lg shadow-black/25">
               <span class="text-cyan font-bold mr-1.5">Operations Disclosure:</span>
               Operations based in India. Direct recruiting coordination across IST and US EST/PST business hours. We do not maintain US physical offices or offer direct US employment.
             </div>

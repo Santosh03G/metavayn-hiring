@@ -20,7 +20,7 @@ import { SmoothScrollService } from '../../services/smooth-scroll.service';
           <!-- Column 1: Brand & Disclosure (Spans 2 cols on lg) -->
           <div class="lg:col-span-2 flex flex-col gap-4">
             <app-logo></app-logo>
-            <p class="text-sm text-slate leading-relaxed max-w-sm mt-2">
+            <p class="text-sm text-ice/85 leading-relaxed max-w-sm mt-2">
               Connecting exceptional engineering talent with companies shaping the future.
             </p>
 
@@ -49,7 +49,7 @@ import { SmoothScrollService } from '../../services/smooth-scroll.service';
           <!-- Column 2: For Candidates -->
           <div>
             <h3 class="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-4">For Candidates</h3>
-            <ul class="space-y-2.5 text-sm text-slate">
+            <ul class="space-y-2.5 text-sm text-ice/80">
               <li><a routerLink="/jobs" class="hover:text-cyan transition-colors">Search Jobs</a></li>
               <li><a routerLink="/categories" class="hover:text-cyan transition-colors">Job Categories</a></li>
               <li><a routerLink="/candidates" class="hover:text-cyan transition-colors">Candidate Guide</a></li>
@@ -61,7 +61,7 @@ import { SmoothScrollService } from '../../services/smooth-scroll.service';
           <!-- Column 3: For Employers -->
           <div>
             <h3 class="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-4">For Employers</h3>
-            <ul class="space-y-2.5 text-sm text-slate">
+            <ul class="space-y-2.5 text-sm text-ice/80">
               <li><a routerLink="/employers" class="hover:text-cyan transition-colors">US Talent Solutions</a></li>
               <li><a routerLink="/categories" class="hover:text-cyan transition-colors">Practice Disciplines</a></li>
               <li><a routerLink="/employers" class="hover:text-cyan transition-colors">Hiring FAQs</a></li>
@@ -72,7 +72,7 @@ import { SmoothScrollService } from '../../services/smooth-scroll.service';
           <!-- Column 4: Company -->
           <div>
             <h3 class="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-4">Company</h3>
-            <ul class="space-y-2.5 text-sm text-slate">
+            <ul class="space-y-2.5 text-sm text-ice/80">
               <li><a routerLink="/about" class="hover:text-cyan transition-colors">About Metavayn</a></li>
               <li><a routerLink="/contact" class="hover:text-cyan transition-colors">Contact Us</a></li>
               <li><a routerLink="/about" class="hover:text-cyan transition-colors">Privacy Policy</a></li>
@@ -82,11 +82,11 @@ import { SmoothScrollService } from '../../services/smooth-scroll.service';
         </div>
 
         <!-- Sub-Footer Bottom Bar -->
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate">
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ice/70">
           <div>
             © 2026 Metavayn. All rights reserved.
             <span class="inline-block mx-2 text-white/20">|</span>
-            <span class="text-slate/80">Illustrative sample listings — Independent Recruiting Firm.</span>
+            <span class="text-ice/60">Illustrative sample listings — Independent Recruiting Firm.</span>
           </div>
 
           <!-- Back to Top Button -->
