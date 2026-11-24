@@ -50,6 +50,9 @@ import { DISCIPLINES } from '../../../../data/disciplines.data';
                         <line x1="6" y1="6" x2="6.01" y2="6"/>
                         <line x1="6" y1="18" x2="6.01" y2="18"/>
                       }
+                      @case ('activity') {
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                      }
                       @default {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M22 12h-4l-3 9L9 3l-3 9H2"/>
                       }
