@@ -36,8 +36,8 @@ import { DISCIPLINES } from '../../data/disciplines.data';
 
           <!-- Mandatory Illustrative Disclaimer Notice -->
           <div class="illustrative-disclaimer inline-block">
-            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-navy/60 border border-white/10 text-xs text-slate font-mono backdrop-blur-md">
-              <svg class="w-4 h-4 text-cyan/70 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-navy/60 border border-white/10 text-xs text-ice/85 font-mono backdrop-blur-md">
+              <svg class="w-4 h-4 text-cyan shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span>Note: All listings shown below are illustrative representations of client requirements. Metavayn does not publish live vacancies without active mandate agreements.</span>
@@ -55,7 +55,7 @@ import { DISCIPLINES } from '../../data/disciplines.data';
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-3.5 mb-5">
               <!-- Keyword Search -->
               <div class="lg:col-span-7 relative group">
-                <div class="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate group-focus-within:text-cyan transition-colors">
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none text-cyan/70 group-focus-within:text-cyan transition-colors">
                   <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                   </svg>
@@ -67,7 +67,7 @@ import { DISCIPLINES } from '../../data/disciplines.data';
                   [value]="searchQuery()"
                   (input)="onSearchInput($event)"
                   placeholder="Search by title, technical skill, or tool (e.g. Revit, FEA, ETAP)..."
-                  class="glass-input w-full rounded-xl py-3.5 pl-11 pr-20 text-sm placeholder:text-slate focus:outline-none"
+                  class="glass-input w-full rounded-xl py-3.5 pl-11 pr-20 text-sm text-white placeholder:text-ice/70 focus:outline-none"
                 />
 
                 <div class="absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center gap-2">
@@ -75,7 +75,7 @@ import { DISCIPLINES } from '../../data/disciplines.data';
                     <button
                       type="button"
                       (click)="clearSearch()"
-                      class="search-clear-btn p-1 text-slate hover:text-white rounded-md bg-white/5 hover:bg-white/10 transition-colors cursor-pointer"
+                      class="search-clear-btn p-1 text-ice hover:text-white rounded-md bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
                       aria-label="Clear search query"
                     >
                       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -83,7 +83,7 @@ import { DISCIPLINES } from '../../data/disciplines.data';
                       </svg>
                     </button>
                   }
-                  <kbd class="search-shortcut hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono text-slate border border-white/10 bg-white/5 select-none pointer-events-none">
+                  <kbd class="search-shortcut hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono text-ice border border-white/20 bg-white/10 select-none pointer-events-none">
                     /
                   </kbd>
                 </div>
@@ -91,7 +91,7 @@ import { DISCIPLINES } from '../../data/disciplines.data';
 
               <!-- Location Search -->
               <div class="lg:col-span-5 relative group">
-                <div class="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate group-focus-within:text-cyan transition-colors">
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none text-cyan/70 group-focus-within:text-cyan transition-colors">
                   <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -103,14 +103,14 @@ import { DISCIPLINES } from '../../data/disciplines.data';
                   [value]="locationQuery()"
                   (input)="onLocationInput($event)"
                   placeholder="Filter location (e.g. Remote, East Coast)..."
-                  class="glass-input w-full rounded-xl py-3.5 pl-11 pr-10 text-sm placeholder:text-slate focus:outline-none"
+                  class="glass-input w-full rounded-xl py-3.5 pl-11 pr-10 text-sm text-white placeholder:text-ice/70 focus:outline-none"
                 />
 
                 @if (locationQuery()) {
                   <button
                     type="button"
                     (click)="clearLocation()"
-                    class="location-clear-btn absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-slate hover:text-white rounded-md bg-white/5 hover:bg-white/10 transition-colors cursor-pointer"
+                    class="location-clear-btn absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-ice hover:text-white rounded-md bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
                     aria-label="Clear location filter"
                   >
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -121,9 +121,10 @@ import { DISCIPLINES } from '../../data/disciplines.data';
               </div>
             </div>
 
-            <!-- Segmented Discipline Filters -->
-            <div class="flex items-center gap-2 overflow-x-auto pb-2 pt-1 scrollbar-none border-t border-white/5">
-              <span class="text-xs font-mono uppercase tracking-wider text-slate hidden sm:inline-block pr-2">
+            <!-- Segmented Discipline Filters (Wrapping grid with zero scrollbars) -->
+            <div class="flex flex-wrap items-center gap-2 pt-3 border-t border-white/10">
+              <span class="text-xs font-mono uppercase tracking-wider text-cyan font-semibold flex items-center gap-1.5 pr-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan inline-block"></span>
                 Discipline:
               </span>
 
@@ -133,15 +134,15 @@ import { DISCIPLINES } from '../../data/disciplines.data';
                 class="px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer flex items-center gap-1.5"
                 [class.bg-cyan]="selectedDiscipline() === 'all'"
                 [class.text-midnight]="selectedDiscipline() === 'all'"
-                [class.shadow-[0_0_15px_rgba(34,211,238,0.3)]]="selectedDiscipline() === 'all'"
-                [class.bg-white/5]="selectedDiscipline() !== 'all'"
-                [class.hover:bg-white/10]="selectedDiscipline() !== 'all'"
-                [class.text-ice]="selectedDiscipline() !== 'all'"
+                [class.shadow-[0_0_15px_rgba(34,211,238,0.35)]]="selectedDiscipline() === 'all'"
+                [class.bg-white/10]="selectedDiscipline() !== 'all'"
+                [class.hover:bg-white/20]="selectedDiscipline() !== 'all'"
+                [class.text-white]="selectedDiscipline() !== 'all'"
                 [class.border]="selectedDiscipline() !== 'all'"
-                [class.border-white/10]="selectedDiscipline() !== 'all'"
+                [class.border-white/15]="selectedDiscipline() !== 'all'"
               >
                 <span>All Disciplines</span>
-                <span class="px-1.5 py-0.5 rounded-full text-[10px]" [class.bg-midnight/20]="selectedDiscipline() === 'all'" [class.bg-white/10]="selectedDiscipline() !== 'all'">
+                <span class="px-1.5 py-0.5 rounded-full text-[10px] font-bold" [class.bg-midnight/25]="selectedDiscipline() === 'all'" [class.bg-cyan/20]="selectedDiscipline() !== 'all'" [class.text-cyan]="selectedDiscipline() !== 'all'">
                   {{ allJobs.length }}
                 </span>
               </button>
@@ -153,15 +154,15 @@ import { DISCIPLINES } from '../../data/disciplines.data';
                   class="px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer flex items-center gap-1.5"
                   [class.bg-cyan]="selectedDiscipline() === d.slug"
                   [class.text-midnight]="selectedDiscipline() === d.slug"
-                  [class.shadow-[0_0_15px_rgba(34,211,238,0.3)]]="selectedDiscipline() === d.slug"
-                  [class.bg-white/5]="selectedDiscipline() !== d.slug"
-                  [class.hover:bg-white/10]="selectedDiscipline() !== d.slug"
-                  [class.text-ice]="selectedDiscipline() !== d.slug"
+                  [class.shadow-[0_0_15px_rgba(34,211,238,0.35)]]="selectedDiscipline() === d.slug"
+                  [class.bg-white/10]="selectedDiscipline() !== d.slug"
+                  [class.hover:bg-white/20]="selectedDiscipline() !== d.slug"
+                  [class.text-white]="selectedDiscipline() !== d.slug"
                   [class.border]="selectedDiscipline() !== d.slug"
-                  [class.border-white/10]="selectedDiscipline() !== d.slug"
+                  [class.border-white/15]="selectedDiscipline() !== d.slug"
                 >
                   <span>{{ d.name }}</span>
-                  <span class="px-1.5 py-0.5 rounded-full text-[10px]" [class.bg-midnight/20]="selectedDiscipline() === d.slug" [class.bg-white/10]="selectedDiscipline() !== d.slug">
+                  <span class="px-1.5 py-0.5 rounded-full text-[10px] font-bold" [class.bg-midnight/25]="selectedDiscipline() === d.slug" [class.bg-cyan/20]="selectedDiscipline() !== d.slug" [class.text-cyan]="selectedDiscipline() !== d.slug">
                     {{ getJobCountForDiscipline(d.slug) }}
                   </span>
                 </button>
@@ -169,9 +170,9 @@ import { DISCIPLINES } from '../../data/disciplines.data';
             </div>
 
             <!-- Active Filter Chips & Feedback Bar -->
-            <div class="flex flex-wrap items-center justify-between gap-3 pt-4 mt-3 border-t border-white/5 text-xs">
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-4 mt-3 border-t border-white/10 text-xs">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="text-slate">Showing <span class="text-white font-medium">{{ filteredJobs().length }}</span> illustrative opportunities</span>
+                <span class="text-ice/90">Showing <span class="text-cyan font-bold">{{ filteredJobs().length }}</span> illustrative opportunities</span>
 
                 @if (searchQuery()) {
                   <span class="active-filter-chip inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-cyan/10 border border-cyan/30 text-cyan text-xs">
