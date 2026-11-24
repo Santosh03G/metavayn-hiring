@@ -162,10 +162,11 @@ describe('NavbarComponent', () => {
     expect(desktopLinks.length).toBe(7);
   });
 
-  it('should render live status badge indicating active US client mandates', () => {
+  it('should render clean brand logo without radar badge', () => {
     const badge = fixture.nativeElement.querySelector('.radar-badge');
-    expect(badge).toBeTruthy();
-    expect(badge.textContent).toContain('US Mandates Active');
+    expect(badge).toBeFalsy();
+    const logo = fixture.nativeElement.querySelector('app-logo');
+    expect(logo).toBeTruthy();
   });
 
   it('should render primary CTA with exact text "Submit Your Resume"', () => {

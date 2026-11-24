@@ -52,7 +52,6 @@ import { RouterLink } from '@angular/router';
       @if (!iconOnly) {
         <span class="logo-wordmark font-heading font-bold text-white tracking-tight flex items-center" [class]="wordmarkClasses">
           Metavayn
-          <span class="w-1.5 h-1.5 rounded-full bg-cyan ml-1 inline-block shadow-[0_0_8px_#22D3EE]"></span>
         </span>
       }
     </a>

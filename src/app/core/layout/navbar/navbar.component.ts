@@ -40,18 +40,9 @@ export interface NavItem {
           [class.px-4]="true"
           [class.sm:px-6]="true"
         >
-          <!-- Left: Logo & Live Status Radar -->
+          <!-- Left: Logo -->
           <div class="flex items-center gap-3 shrink-0">
             <app-logo></app-logo>
-
-            <!-- Live Status Radar Micro-Pill -->
-            <div class="radar-badge hidden xl:flex items-center gap-2 pl-3 border-l border-white/10 text-[11px] font-mono text-cyan tracking-wide select-none">
-              <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan"></span>
-              </span>
-              <span>US Mandates Active</span>
-            </div>
           </div>
 
           <!-- Center: Desktop Navigation Links Capsule -->
@@ -111,27 +102,16 @@ export interface NavItem {
         <div class="flex items-center justify-between pb-5 border-b border-white/10">
           <app-logo (click)="closeMobileMenu()"></app-logo>
           
-          <div class="flex items-center gap-3">
-            <!-- Mobile Telemetry Indicator -->
-            <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan/10 border border-cyan/20 text-[11px] font-mono text-cyan select-none">
-              <span class="relative flex h-1.5 w-1.5">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-cyan"></span>
-              </span>
-              <span>Active Mandates</span>
-            </div>
-
-            <button
-              type="button"
-              (click)="closeMobileMenu()"
-              class="p-2 rounded-xl text-ice hover:text-white bg-white/5 active:scale-95 transition-all"
-              aria-label="Close menu"
-            >
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+          <button
+            type="button"
+            (click)="closeMobileMenu()"
+            class="p-2 rounded-xl text-ice hover:text-white bg-white/5 active:scale-95 transition-all"
+            aria-label="Close menu"
+          >
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
 
         <!-- Staggered Links with Touch-Active Physics -->
