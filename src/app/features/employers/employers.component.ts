@@ -62,7 +62,7 @@ interface FaqItem {
           </h1>
 
           <p class="text-base sm:text-lg text-ice/80 max-w-3xl mx-auto leading-relaxed mb-6">
-            Deploy specialized mechanical, HVAC, electrical, structural, and simulation engineers trained in authentic US codes and CAD/BIM tooling. Flexible remote engagements with guaranteed domain proficiency.
+            Hire skilled mechanical, HVAC, electrical, and structural engineers who already work with US building codes and CAD/BIM standards. Remote engagements structured around your project schedule and team requirements.
           </p>
 
           <!-- Honest Disclosure Notice Banner -->
@@ -94,7 +94,7 @@ interface FaqItem {
               Engineered for US Technical Rigor
             </h2>
             <p class="text-base text-ice/70 max-w-2xl mx-auto">
-              We bridge the cross-border gap by strictly evaluating candidates against authentic American engineering standards, production software workflows, and real-time collaboration norms.
+              We test candidates on American engineering codes, standard calculation templates, and 3 to 4 hours of daily US working overlap.
             </p>
           </div>
 
@@ -580,27 +580,27 @@ export class EmployersComponent {
   readonly valuePillars: ValuePillar[] = [
     {
       tag: 'US Code Rigor',
-      title: 'Authentic US Code Mastery',
-      description: 'Deep working familiarity with ASHRAE 90.1 & 62.1, ASME Section VIII & B31.3, NFPA 70 (NEC), IEEE, and IBC standard specifications.',
-      highlights: ['Zero code translation lag', 'ASME & ASHRAE verified portfolios', 'Standardized calculation sheets']
+      title: 'US Code Familiarity',
+      description: 'Practical experience with ASHRAE 90.1, ASME Section VIII, NFPA 70 (NEC), and IBC standards, so your team spends less time explaining basic requirements.',
+      highlights: ['ASHRAE, ASME & NEC project portfolios', 'Direct use of US calculation sheets', 'Standard Imperial unit conventions']
     },
     {
-      tag: 'CAD / BIM Mastery',
-      title: 'Turnkey Tool Readiness',
-      description: 'Immediate production-level proficiency in Autodesk Revit MEP, BIM 360, SolidWorks, ANSYS Fluent, ETAP, and Bluebeam without ramp-up overhead.',
-      highlights: ['Native Revit template integration', 'LOD 300-400 modeling standards', 'Automated clash detection']
+      tag: 'CAD / BIM Tools',
+      title: 'Production Tool Readiness',
+      description: 'Proficiency in Revit MEP, BIM 360, SolidWorks, ANSYS, and ETAP. Engineers step straight into active project files using standard templates.',
+      highlights: ['Native Revit templates & BIM 360', 'LOD 300-400 modeling experience', 'Clash detection and submittal prep']
     },
     {
-      tag: 'Financial Leverage',
-      title: '40-60% Cost Efficiency',
-      description: 'Transparent USD billing structures that deliver substantial operating leverage compared to domestic US contract talent.',
-      highlights: ['Zero US employer payroll burden', 'Straightforward monthly USD invoicing', 'Flexible scaling without overhead']
+      tag: 'Billing & Terms',
+      title: 'Cost & Operational Flexibility',
+      description: 'Straightforward monthly invoicing with no US domestic payroll taxes or benefits overhead. Scale up for major project deadlines without long-term commitments.',
+      highlights: ['Zero domestic US payroll overhead', 'Predictable monthly USD invoicing', 'Scale up or down per project phase']
     },
     {
       tag: 'Timezone Overlap',
-      title: 'Real-Time Collaboration',
-      description: 'Engineered overlap of 3 to 4 hours daily with US Eastern (EST) and Pacific (PST) business hours for seamless team alignment.',
-      highlights: ['Daily standup participation', 'Rapid same-day design iterations', 'Overnight sprint turnaround']
+      title: 'Daily US Timezone Overlap',
+      description: 'Engineered overlap of 3 to 4 hours daily with US Eastern (EST) and Pacific (PST) business hours for standups, design reviews, and urgent revisions.',
+      highlights: ['Daily standup participation', 'Same-day coordination and reviews', 'Overnight turnaround on drafting tasks']
     }
   ];
 

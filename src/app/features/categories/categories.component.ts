@@ -38,7 +38,7 @@ import { DISCIPLINES } from '../../data/disciplines.data';
             Engineering Disciplines We Staff
           </h1>
           <p class="max-w-3xl mx-auto text-base sm:text-lg text-ice/80 leading-relaxed font-normal">
-            Deep technical recruitment connecting India's top engineering specialists with American infrastructure, manufacturing, and mission-critical programs.
+            We connect experienced mechanical, electrical, structural, and simulation engineers in India with active projects across the United States.
           </p>
         </div>
       </header>

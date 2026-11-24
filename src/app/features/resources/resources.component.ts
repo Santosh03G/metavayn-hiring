@@ -37,7 +37,7 @@ import { RESOURCES, RESOURCE_CATEGORIES, ResourceArticle, ResourceCategory } fro
           </h1>
 
           <p class="text-base sm:text-lg text-ice/80 max-w-3xl mx-auto leading-relaxed mb-8">
-            Practical engineering guides, US vs Indian code crosswalks, remote infrastructure playbooks, and compensation intelligence for cross-border engineering teams.
+            Practical engineering guides, US versus Indian code comparisons, remote setup guidelines, and compensation data for engineering teams.
           </p>
 
           <!-- Interactive Search Bar -->

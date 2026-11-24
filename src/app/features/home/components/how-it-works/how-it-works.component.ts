@@ -32,7 +32,7 @@ export interface TimelineStep {
         <app-section-heading
           badge="Process Overview"
           title="How It Works"
-          subtitle="A transparent, step-by-step roadmap from initial introduction to successful placement"
+          subtitle="How we evaluate technical ability, coordinate interviews, and support engineers and employers through day one"
           [centered]="true"
         ></app-section-heading>
 
@@ -143,32 +143,32 @@ export class HowItWorksComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       number: '01',
       title: 'Submit Resume',
-      description: 'Upload your credentials and highlight your engineering discipline, software tools, and career objectives.',
-      details: ['Online intake submission', 'Confidential profile registration', 'Discipline alignment check']
+      description: 'Share your engineering background, software experience, and US code familiarity through our candidate portal.',
+      details: ['Online profile submission', 'Confidential registration', 'Discipline & tools selection']
     },
     {
       number: '02',
       title: 'Technical Screening',
-      description: 'In-depth consultation with a technical recruiter evaluating your modeling, simulation, and engineering fundamentals.',
-      details: ['CAD/FEA tool verification', 'Project portfolio review', 'US code familiarity (ASHRAE, ASME, IEEE)']
+      description: 'A structured discussion evaluating your design calculations, 3D modeling samples, and code adherence.',
+      details: ['CAD / BIM portfolio review', 'Calculation sheet checks', 'US code familiarity (ASHRAE, ASME, IEEE)']
     },
     {
       number: '03',
       title: 'Opportunity Matching',
-      description: 'Review vetted, illustrative opportunities matching your compensation expectations and engineering focus.',
-      details: ['Targeted role presentations', 'Compensation alignment', 'Client project scope review']
+      description: 'Review matching roles that fit your technical background and compensation expectations.',
+      details: ['Project scope review', 'USD compensation alignment', 'Direct role presentations']
     },
     {
       number: '04',
       title: 'Interview Briefing',
-      description: 'Comprehensive preparation for technical interview rounds with hiring managers and engineering leads.',
-      details: ['Technical briefing documents', 'Mock technical discussions', 'Team culture overview']
+      description: 'Detailed briefings on client technical stacks, project drawings, and interview expectations.',
+      details: ['Project technical briefings', 'Tooling & environment prep', 'Interview logistics']
     },
     {
       number: '05',
       title: 'Offer & Onboarding Support',
-      description: 'Dedicated support through contract evaluation, compensation negotiation, and engagement launch.',
-      details: ['Terms review & signing', 'Hardware & tooling setup', 'Ongoing placement support']
+      description: 'Hands-on help with contract evaluation, remote tool setup, and day-one onboarding.',
+      details: ['Clear terms & rate review', 'VDI & software access setup', 'Day-one team onboarding']
     }
   ];
 
@@ -176,32 +176,32 @@ export class HowItWorksComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       number: '01',
       title: 'Role Intake',
-      description: 'Define precise engineering requirements, simulation packages, CAD tooling, and program timelines.',
-      details: ['Technical specification brief', 'Seniority & domain scoping', 'Engagement model selection']
+      description: 'Define your project requirements, CAD/BIM standards, software tools, and timeline.',
+      details: ['Scope & specifications brief', 'Software & tool requirements', 'Timezone overlap requirements']
     },
     {
       number: '02',
       title: 'Targeted Sourcing',
-      description: 'We query our specialized Indian engineering network for rigorously qualified technical talent.',
-      details: ['Domain-specific candidate pool', 'Verification of engineering degrees', 'Skill & tooling vetting']
+      description: 'We source candidates from our network in India who have proven experience with American codes and calculation standards.',
+      details: ['Direct technical candidate search', 'Degree & credential verification', 'Calculation & tooling evaluation']
     },
     {
       number: '03',
       title: 'Shortlist Delivery',
-      description: 'Receive curated technical candidate dossiers within 48 to 72 hours of mandate finalization.',
-      details: ['Detailed candidate dossier', 'Technical interview notes', 'Availability & compensation fit']
+      description: 'Review complete candidate dossiers with sample calculations and interview notes within 48 to 72 hours.',
+      details: ['Candidate technical profile', 'Evaluator interview notes', 'Availability & rate confirmation']
     },
     {
       number: '04',
       title: 'Coordinated Interviews',
-      description: 'Structured interview scheduling directly with technical leads, complete with briefing coordination.',
-      details: ['Seamless schedule management', 'Technical assessment coordination', 'Feedback collection']
+      description: 'We schedule technical rounds directly with your team, manage timezone coordination, and handle candidate feedback.',
+      details: ['Direct calendar scheduling', 'Timezone overlap management', 'Candidate feedback delivery']
     },
     {
       number: '05',
       title: 'Placement & Integration',
-      description: 'Onboarding coordination to ensure rapid, friction-free productivity from day one.',
-      details: ['Onboarding guidance', 'Milestone follow-up', 'Long-term engagement success check']
+      description: 'Support through contract signing and remote setup so engineers start delivering from day one.',
+      details: ['Contract finalization', 'VDI & environment setup', 'Ongoing placement follow-up']
     }
   ];
 

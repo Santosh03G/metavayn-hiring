@@ -59,7 +59,7 @@ interface ParticleNode {
 
         <!-- Subtext -->
         <p class="text-base sm:text-lg md:text-xl text-ice/85 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-          Connecting Engineering Talent with America's Leading Industries.
+          Connecting Engineering Talent with America's Leading Industrial Teams. Direct technical placement for HVAC, mechanical, electrical, and structural engineers in India.
         </p>
 
         <!-- Hero Dual Action CTAs (Strict Amber Isolation) -->

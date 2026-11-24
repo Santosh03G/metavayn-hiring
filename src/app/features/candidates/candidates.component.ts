@@ -47,7 +47,7 @@ interface FaqItem {
             Work with Top US Engineering Firms
           </h1>
           <p class="text-base sm:text-lg text-ice/80 max-w-3xl mx-auto leading-relaxed mb-6">
-            Directly connect your domain expertise in HVAC, Mechanical, Electrical, and Simulation with leading US client mandates. High-impact remote roles with USD-benchmarked remuneration.
+            Put your HVAC, mechanical, electrical, or structural engineering skills to work on active US projects. Remote positions with competitive compensation pegged to US Dollar benchmarks.
           </p>
 
           <!-- Honest Disclosure Banner -->
@@ -525,12 +525,12 @@ interface FaqItem {
       <section class="py-20 border-t border-white/10 bg-midnight relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
-            <span class="text-xs font-mono uppercase tracking-widest text-cyan mb-2 block">Rigorous Vetting</span>
+            <span class="text-xs font-mono uppercase tracking-widest text-cyan mb-2 block">How We Work</span>
             <h2 class="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">
-              The Metavayn Candidate Journey
+              The Candidate Evaluation Process
             </h2>
             <p class="text-base text-ice/70 max-w-2xl mx-auto">
-              Our 4-stage technical verification highlights your real engineering competence directly to US hiring directors.
+              We look at your real calculations and drawings so US engineering directors know exactly what you can deliver.
             </p>
           </div>
 
@@ -648,31 +648,31 @@ export class CandidatesComponent implements OnInit {
   readonly vettingSteps: VettingStep[] = [
     {
       number: '01',
-      title: 'Technical Portfolio Audit',
+      title: 'Portfolio & Calculations Review',
       duration: 'Day 1 - 2',
-      description: 'Review of past commercial calculation sheets, 3D CAD/BIM model samples, and code adherence.',
-      deliverables: ['Revit / SolidWorks drawing review', 'ASHRAE / ASME calculation audit']
+      description: 'We review your calculation sheets, 3D CAD/BIM model files, and code compliance on past projects.',
+      deliverables: ['Revit / SolidWorks drawing review', 'ASHRAE, ASME & NEC calculation check']
     },
     {
       number: '02',
-      title: 'Principal Scenario Interview',
+      title: 'Technical Interview',
       duration: 'Day 3 - 5',
-      description: 'Live 60-minute technical session with an industry practice lead evaluating US standards problem solving.',
-      deliverables: ['Real-time code application', 'English technical communication']
+      description: 'A 60-minute technical discussion with a senior engineering lead covering real project scenarios and communication.',
+      deliverables: ['Problem solving on US codes', 'Technical communication review']
     },
     {
       number: '03',
-      title: 'Curated Client Matching',
+      title: 'Direct Client Introduction',
       duration: 'Week 2',
-      description: 'Your verified profile dossier is directly pitched to US Engineering Directors and Practice Leads.',
-      deliverables: ['Targeted role presentations', 'Bypassing generic HR portals']
+      description: 'We introduce your verified profile directly to US engineering directors who have matching project openings.',
+      deliverables: ['Direct role presentation', 'Project scope alignment']
     },
     {
       number: '04',
-      title: 'High-Yield Placement',
+      title: 'Offer & Contract Launch',
       duration: 'Week 3',
-      description: 'Final client interviews followed by cross-border contracts pegged to US Dollar benchmarks.',
-      deliverables: ['USD-benchmarked remuneration', 'Direct engineering collaboration']
+      description: 'Final interviews with the US engineering team, followed by remote agreements with clear USD-pegged pay rates.',
+      deliverables: ['USD-benchmarked compensation', 'Remote tool access and onboarding']
     }
   ];
 

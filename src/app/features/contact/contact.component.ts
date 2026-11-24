@@ -49,7 +49,7 @@ interface CommunicationChannel {
           </h1>
 
           <p class="text-base sm:text-lg text-ice/85 max-w-3xl mx-auto leading-relaxed mb-6 font-normal">
-            Direct recruiting coordination and technical capability matching across US and Indian engineering hubs. We operate dedicated communication lines for US hiring leaders, prospective engineering contractors, and operational partners.
+            Talk directly with our recruitment team. Whether you need to hire engineers for an upcoming project or you want to join our talent network in India, we respond within one business day.
           </p>
 
           <!-- Honest Operations Disclosure Banner -->
@@ -71,7 +71,7 @@ interface CommunicationChannel {
               Direct Communication Channels
             </h2>
             <p class="text-sm sm:text-base text-ice/70 max-w-2xl mx-auto">
-              Route your query directly to the appropriate team for rapid turnaround without generic ticketing queues.
+              Reach our specialized recruitment desks directly for faster replies without ticketing queues.
             </p>
           </div>
 

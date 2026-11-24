@@ -55,7 +55,7 @@ interface OperatingMetric {
           </h1>
 
           <p class="text-base sm:text-lg text-ice/85 max-w-3xl mx-auto leading-relaxed mb-6 font-normal">
-            Metavayn was founded with a singular conviction: global engineering capacity should not be constrained by geographic boundaries. We empower US architectural, engineering, and manufacturing organizations to scale high-complexity technical workflows by deploying rigorously vetted, code-proficient Indian engineers.
+            We started Metavayn to solve a persistent issue in American engineering: finding qualified mechanical, electrical, and structural engineers who know US building codes and industrial standards. India has deep engineering talent, but generic staffing agencies cannot evaluate calculation sheets or Revit models. We test technical skills on real project drawings so US teams can hire with confidence.
           </p>
 
           <!-- Honest Disclosure Banner -->
@@ -97,12 +97,12 @@ interface OperatingMetric {
       <section id="principles" class="py-20 border-b border-white/10 bg-midnight relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
-            <span class="text-xs font-mono uppercase tracking-widest text-cyan mb-2 block">Foundational Tenets</span>
+            <span class="text-xs font-mono uppercase tracking-widest text-cyan mb-2 block">How We Work</span>
             <h2 class="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">
               Our 4 Core Principles
             </h2>
             <p class="text-base text-ice/70 max-w-2xl mx-auto">
-              Every placement, technical evaluation, and engagement contract is anchored in uncompromising transparency and technical rigor.
+              Every placement is direct, honest about location, and backed by genuine technical checks.
             </p>
           </div>
 
@@ -157,7 +157,7 @@ interface OperatingMetric {
                 Nationwide Delivery Network
               </h2>
               <p class="text-base text-ice/85 leading-relaxed mb-6 font-normal">
-                Our recruiting and technical assessment operations span India's nationwide engineering ecosystem, tapping into accredited talent pools from premier technological institutions and specialized multidisciplinary consulting practices.
+                Our recruiting network spans India's major industrial and engineering centers, bringing together experienced engineers who have worked in multinational consultancies and complex industrial projects.
               </p>
 
               <div class="space-y-4 mb-8">
@@ -311,8 +311,8 @@ export class AboutComponent {
     {
       number: '01',
       title: 'Genuine Technical Depth',
-      tagline: 'Domain Mastery Above All',
-      description: 'We do not operate on generic resume keyword parsing or superficial screening. Every candidate is evaluated by experienced engineering practitioners across actual design problems, calculation standards, and production modeling workflows.',
+      tagline: 'Direct Engineering Review',
+      description: 'We evaluate calculation sheets, 3D BIM models, and code knowledge before any interview. Every candidate is assessed on actual standards they will use on the job.',
       pillars: [
         'Domain-specific technical interviews led by senior engineers',
         'Direct testing on authentic design calculations and sizing',
@@ -322,8 +322,8 @@ export class AboutComponent {
     {
       number: '02',
       title: 'Cross-Border Transparency',
-      tagline: 'Zero Opacity, Total Trust',
-      description: 'We are completely honest about who we are and how we operate. As an India-based engineering recruitment firm, we maintain complete transparency regarding billing, operational models, and remote contractor arrangements without inflated claims.',
+      tagline: 'Upfront Operations',
+      description: 'We are completely upfront about how we operate. As an India-based engineering recruitment firm, we provide direct clarity on remote contractor arrangements, compensation, and billing without inflated claims.',
       pillars: [
         'Clear operations disclosure and remote contractor structures',
         'Direct communication and collaborative engagement workflows',
@@ -333,8 +333,8 @@ export class AboutComponent {
     {
       number: '03',
       title: 'Authentic US Code Rigor',
-      tagline: 'Permit-Ready Compliance',
-      description: 'Engineering drawings and calculations must meet US municipal, state, and national codes from day one. Our talent network demonstrates hands-on mastery of American regulatory frameworks and engineering conventions.',
+      tagline: 'Practical Code Fluency',
+      description: 'Engineering drawings and calculations must meet US municipal, state, and national codes. Our candidates demonstrate practical fluency in American regulatory frameworks, calculation methods, and submittal standards.',
       pillars: [
         'Deep alignment with ASHRAE, ASME, NFPA, IBC, and NEC standards',
         'Fluency in US imperial units, drafting standards, and schedule conventions',
@@ -344,12 +344,12 @@ export class AboutComponent {
     {
       number: '04',
       title: 'Mutual Value Creation',
-      tagline: 'Sustainable Global Partnerships',
-      description: 'A successful cross-border collaboration must be a win-win for everyone involved. US hiring teams gain high-velocity engineering capacity, while Indian technical professionals receive world-class career exposure and top-tier compensation.',
+      tagline: 'Fair Global Engagements',
+      description: 'Successful cross-border collaboration requires fair outcomes for everyone. US teams get dependable engineering capacity for critical projects, and Indian engineers earn competitive USD-benchmarked compensation for their technical skill.',
       pillars: [
-        'Above-market international compensation for engineers',
-        'Significant operational velocity and margin efficiency for US firms',
-        'Career-defining mentorship on complex global infrastructure projects'
+        'Competitive USD-benchmarked compensation for engineers',
+        'Reliable engineering capacity for US project deadlines',
+        'Direct collaboration on complex American infrastructure programs'
       ]
     }
   ];

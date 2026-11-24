@@ -20,7 +20,7 @@ export interface Pillar {
         <app-section-heading
           badge="Why Metavayn"
           title="Engineered for Technical Precision"
-          subtitle="A specialized engineering recruiting practice grounded in domain literacy, rigorous screening, and candidate respect"
+          subtitle="We evaluate calculation sheets and project drawings directly before introducing candidates to US hiring managers"
           theme="light"
           [centered]="true"
         ></app-section-heading>
@@ -61,22 +61,22 @@ export class WhyChooseUsComponent {
   readonly pillars: Pillar[] = [
     {
       title: 'Engineering-Focused Recruiting',
-      description: 'We speak the technical language of thermal loads, FEA meshes, single-line schematics, and mission-critical redundancies. No generic keyword matching.',
+      description: 'Our technical team reviews thermal models, FEA meshes, and single-line schematics directly. You interview engineers who already know your software and codes.',
       iconSvg: '<circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/>'
     },
     {
       title: 'Aligned Opportunities',
-      description: 'Direct connection to US employers requiring specialized Indian engineering expertise for high-impact industrial and infrastructure programs.',
+      description: 'Engineers work directly on active American projects with US engineering directors, contributing to real production deliverables every day.',
       iconSvg: '<path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>'
     },
     {
       title: 'Candidate-First Guidance',
-      description: 'Transparent compensation insights, thorough technical interview coaching, and dedicated guidance at every milestone of your career transition.',
+      description: "Candidates receive upfront USD compensation ranges and interview briefings. We don't hide pay rates or push candidates into ill-fitting roles.",
       iconSvg: '<path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M23 21v-2a4 4 0 00-3-3.87"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 3.13a4 4 0 010 7.75"/>'
     },
     {
       title: 'Strict Confidentiality',
-      description: 'Your professional credentials and personal identity are protected with strict non-disclosure. We never distribute profiles without explicit candidate consent.',
+      description: 'We protect your identity and work history under bilateral non-disclosure. Profiles are submitted to employers only after candidate approval.',
       iconSvg: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>'
     }
   ];
