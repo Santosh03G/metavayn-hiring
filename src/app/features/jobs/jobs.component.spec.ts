@@ -94,4 +94,50 @@ describe('JobsComponent', () => {
     expect(emptyNotice).toBeTruthy();
     expect(emptyNotice.textContent).toContain('No matching opportunities found');
   });
+
+  it('should render the unified engineering mandate cockpit container', () => {
+    const cockpit = fixture.nativeElement.querySelector('.mandate-cockpit');
+    expect(cockpit).toBeTruthy();
+  });
+
+  it('should display mandate disclosure badge with pulse indicator', () => {
+    const badge = fixture.nativeElement.querySelector('.mandate-pulse-badge');
+    expect(badge).toBeTruthy();
+    expect(badge.textContent).toContain('Illustrative Mandates');
+  });
+
+  it('should display search keyboard shortcut indicator', () => {
+    const shortcutBadge = fixture.nativeElement.querySelector('.search-shortcut');
+    expect(shortcutBadge).toBeTruthy();
+    expect(shortcutBadge.textContent).toContain('/');
+  });
+
+  it('should clear search input when clear button is clicked', () => {
+    component.searchQuery.set('Revit');
+    fixture.detectChanges();
+
+    const clearBtn = fixture.nativeElement.querySelector('.search-clear-btn');
+    expect(clearBtn).toBeTruthy();
+    clearBtn.click();
+    fixture.detectChanges();
+
+    expect(component.searchQuery()).toBe('');
+  });
+
+  it('should display active filter chips and clear all filters button when filters applied', () => {
+    component.searchQuery.set('CFD');
+    component.setDiscipline('simulation-fea');
+    fixture.detectChanges();
+
+    const activeChips = fixture.nativeElement.querySelectorAll('.active-filter-chip');
+    expect(activeChips.length).toBeGreaterThan(0);
+
+    const clearAllBtn = fixture.nativeElement.querySelector('.clear-all-btn');
+    expect(clearAllBtn).toBeTruthy();
+    clearAllBtn.click();
+    fixture.detectChanges();
+
+    expect(component.searchQuery()).toBe('');
+    expect(component.selectedDiscipline()).toBe('all');
+  });
 });

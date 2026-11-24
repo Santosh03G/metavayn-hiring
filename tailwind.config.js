@@ -6,16 +6,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        midnight: 'var(--color-midnight)',
-        navy: 'var(--color-navy)',
-        royal: 'var(--color-royal)',
-        electric: 'var(--color-electric)',
-        cyan: 'var(--color-cyan)',
-        ice: 'var(--color-ice)',
-        white: 'var(--color-white)',
-        ink: 'var(--color-ink)',
-        slate: 'var(--color-slate)',
-        amber: 'var(--color-amber)',
+        midnight: '#0A1330',
+        navy: '#0F1E4A',
+        royal: '#1D4ED8',
+        electric: '#3B82F6',
+        cyan: '#22D3EE',
+        ice: '#EAF2FF',
+        white: '#FFFFFF',
+        ink: '#0F172A',
+        slate: '#475569',
+        amber: '#F59E0B',
       },
       fontFamily: {
         heading: ['Sora', 'sans-serif'],
