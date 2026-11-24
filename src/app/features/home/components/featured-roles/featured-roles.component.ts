@@ -108,5 +108,5 @@ import { FEATURED_JOBS } from '../../../../data/jobs.data';
   `
 })
 export class FeaturedRolesComponent {
-  readonly jobs = FEATURED_JOBS;
+  readonly jobs = FEATURED_JOBS.slice(0, 3);
 }

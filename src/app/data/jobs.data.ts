@@ -25,15 +25,27 @@ export const FEATURED_JOBS: JobListing[] = [
     isIllustrative: true
   },
   {
-    id: 'mechanical-fea-cfd',
-    title: 'Mechanical Analysis Engineer (FEA/CFD)',
-    discipline: 'Engineering Analysis & Simulation',
-    disciplineSlug: 'engineering-analysis',
+    id: 'mechanical-machine-design',
+    title: 'Senior Mechanical Design Engineer',
+    discipline: 'Mechanical Engineering',
+    disciplineSlug: 'mechanical',
     location: 'Remote (US Midwest Client)',
     workType: 'Remote',
-    compensation: '$90,000 - $115,000 USD / Equiv.',
-    description: 'Execute static structural, transient thermal, and hydrodynamic CFD simulations for heavy equipment enclosures and heat transfer assemblies.',
-    tags: ['ANSYS Mechanical', 'Abaqus', 'SolidWorks Simulation', 'Nonlinear FEA', 'Thermal Analysis'],
+    compensation: '$88,000 - $115,000 USD / Equiv.',
+    description: 'Parametric CAD machine design, precision kinematics, and GD&T tolerance stackups for industrial automated assembly equipment.',
+    tags: ['SolidWorks', 'PTC Creo', 'GD&T (ASME Y14.5)', 'DFMA', 'Machine Design'],
+    isIllustrative: true
+  },
+  {
+    id: 'electrical-power-distribution',
+    title: 'Power Systems Distribution Engineer',
+    discipline: 'Electrical & Power Systems',
+    disciplineSlug: 'electrical',
+    location: 'Remote (US South Client)',
+    workType: 'Remote',
+    compensation: '$90,000 - $120,000 USD / Equiv.',
+    description: 'Execute medium-voltage single-line diagrams, substation layouts, and protective relay coordination studies using ETAP.',
+    tags: ['ETAP', 'Single-Line Diagrams', 'Medium Voltage', 'Substation Design', 'NFPA 70/NEC'],
     isIllustrative: true
   },
   {
@@ -46,6 +58,18 @@ export const FEATURED_JOBS: JobListing[] = [
     compensation: '$95,000 - $125,000 USD / Equiv.',
     description: 'Lead single-line schematic architecture, emergency standby generation, and redundant N+1 UPS power path calculations for hyperscale data centers.',
     tags: ['Single-Line Diagrams', 'Medium Voltage (13.8kV)', 'Rotary UPS', 'SKM PowerTools', 'Coordination Studies'],
+    isIllustrative: true
+  },
+  {
+    id: 'mechanical-fea-cfd',
+    title: 'Mechanical Analysis Engineer (FEA/CFD)',
+    discipline: 'Engineering Analysis & Simulation',
+    disciplineSlug: 'engineering-analysis',
+    location: 'Remote (US Northeast Client)',
+    workType: 'Remote',
+    compensation: '$92,000 - $118,000 USD / Equiv.',
+    description: 'Execute static structural, transient thermal, and hydrodynamic CFD simulations for heavy equipment enclosures and heat transfer assemblies.',
+    tags: ['ANSYS Mechanical', 'Abaqus', 'SolidWorks Simulation', 'Nonlinear FEA', 'Thermal Analysis'],
     isIllustrative: true
   }
 ];
