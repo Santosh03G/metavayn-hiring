@@ -351,7 +351,7 @@ export class ContactComponent {
       title: 'Candidate Applications & Resumes',
       email: 'hiring@metavayn.com',
       badge: 'Talent Network',
-      description: 'Submit your CV, portfolio, and CAD/BIM samples. Direct inquiries regarding technical screening and interview timelines.',
+      description: 'Submit your resume, portfolio, and CAD/BIM samples. Direct inquiries regarding technical screening and interview timelines.',
       timing: 'Response within 24 hours',
       actionText: 'Email Candidate Team'
     },
